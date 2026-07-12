@@ -119,7 +119,7 @@
             transform: translateY(0);
         }
         /* Navigation Entrance Animation */
-        header {
+        nav {
             transform: translateY(-100%);
             animation: navbarSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -130,28 +130,29 @@
 </head>
 <body class="antialiased selection:bg-primary-container selection:text-white flex flex-col min-h-screen">
     <!-- TopNavBar -->
-    <header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-lowest/80 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300 ease-in-out">
-        <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-base max-w-max-width mx-auto transition-all duration-300 ease-in-out">
-            <a class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary-fixed" href="index.html">
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-surface-variant transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center h-20 px-4 md:px-8 max-w-7xl mx-auto transition-all duration-300 ease-in-out">
+            <a class="font-display-lg text-headline-md tracking-tighter text-on-surface" href="index.html">
                 VNB VOGUE
             </a>
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-gutter-desktop">
-                <a class="font-label-md text-label-md text-primary font-bold bg-primary-container/10 px-4 py-2 rounded-full" href="index.html">Home</a>
-                <a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="services.html">Services</a>
-                <a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="about.html">About Us</a>
-                <a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="gallery.html">Gallery</a>
-                <a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="contact.html">Contact</a>
-                <a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="team.html">Meet the Team</a>
-            </nav>
-            <a href="book-appointment.html" class="hidden md:block bg-primary-container text-white px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary transition-colors text-center">
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8 font-label-md text-label-md uppercase tracking-widest">
+                <a class="text-primary font-bold bg-primary-container/10 px-4 py-2 rounded-full" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About Us</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="contact.html">Contact</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">Meet the Team</a>
+            </div>
+            <a href="book-appointment.html" class="hidden md:block bg-primary text-on-primary px-6 py-3 rounded-full uppercase font-label-md text-label-md tracking-widest transition-all duration-300 shadow-md hover:bg-on-primary-fixed-variant text-center">
                 Book Appointment
             </a>
-            <button id="mobile-menu-toggle" class="md:hidden text-primary p-2 focus:outline-none">
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-toggle" class="md:hidden text-on-surface p-2 hover:bg-surface-container transition-colors rounded-full">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
-    </header>
+    </nav>
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 w-80 max-w-full bg-surface-container-lowest shadow-ambient transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6 border-l border-outline-variant/30">
@@ -337,21 +338,19 @@
             }, 100);
 
             // Sticky Navigation Scroll Animation
-            const navHeader = document.querySelector('header');
+            const navHeader = document.querySelector('nav');
             const navInner = navHeader ? navHeader.querySelector('div') : null;
             if (navHeader) {
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 20) {
-                        navHeader.classList.add('shadow-md', 'bg-surface/95', 'backdrop-blur-lg');
-                        navHeader.classList.remove('shadow-sm');
+                        navHeader.classList.add('shadow-md');
                         if (navInner) {
-                            navInner.classList.replace('py-base', 'py-2');
+                            navInner.classList.replace('h-20', 'h-16');
                         }
                     } else {
-                        navHeader.classList.remove('shadow-md', 'bg-surface/95', 'backdrop-blur-lg');
-                        navHeader.classList.add('shadow-sm');
+                        navHeader.classList.remove('shadow-md');
                         if (navInner) {
-                            navInner.classList.replace('py-2', 'py-base');
+                            navInner.classList.replace('h-16', 'h-20');
                         }
                     }
                 });

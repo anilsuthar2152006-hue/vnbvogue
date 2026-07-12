@@ -238,28 +238,28 @@
 </head>
 <body class="bg-surface text-on-surface font-sans antialiased selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
     <!-- Top Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md transition-all duration-300 ease-in-out">
-        <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto transition-all duration-300 ease-in-out">
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-surface-variant transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center h-20 px-4 md:px-8 max-w-7xl mx-auto transition-all duration-300 ease-in-out">
             <!-- Brand Logo -->
             <a class="font-display-lg text-headline-sm tracking-tighter text-on-surface hover:text-primary transition-colors" href="index.html">
                 VNB VOGUE
             </a>
-            <!-- Desktop Navigation Links -->
-            <ul class="hidden md:flex space-x-8 items-center">
-                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a></li>
-                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About Us</a></li>
-                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a></li>
-                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a></li>
-                <li><a aria-current="page" class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold bg-primary-container/10 px-4 py-2 rounded-full transition-colors duration-300" href="contact.html">Contact</a></li>
-                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">Meet the Team</a></li>
-            </ul>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8 font-label-md text-label-md uppercase tracking-widest">
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About Us</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a>
+                <a aria-current="page" class="text-primary font-bold bg-primary-container/10 px-4 py-2 rounded-full transition-colors duration-300" href="contact.html">Contact</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">Meet the Team</a>
+            </div>
             <!-- Trailing Action -->
-            <a href="book-appointment.html" class="hidden md:block bg-primary text-on-primary shadow-sm px-6 py-3 font-label-md text-label-md uppercase rounded-full hover:bg-primary/90 transition-all text-center">
+            <a href="book-appointment.html" class="hidden md:block bg-primary text-on-primary px-6 py-3 rounded-full uppercase font-label-md text-label-md tracking-widest transition-all duration-300 shadow-md hover:bg-on-primary-fixed-variant text-center">
                 Book Appointment
             </a>
             <!-- Mobile Menu Toggle -->
-            <button id="mobile-menu-toggle" class="md:hidden text-on-surface p-2 focus:outline-none shadow-soft-extruded rounded-full active:shadow-soft-pressed transition-all">
-                <span class="material-symbols-outlined text-3xl">menu</span>
+            <button id="mobile-menu-toggle" class="md:hidden text-on-surface p-2 hover:bg-surface-container transition-colors rounded-full">
+                <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </nav>
