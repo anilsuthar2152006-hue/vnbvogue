@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VNB VOGUE UNISEX SALON - Luxury Beauty &amp; Grooming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#630d0d",
+                        "on-primary-fixed": "#410002",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#e1d8d4",
+                        "on-surface": "#1e1b18",
+                        "on-secondary-fixed-variant": "#643b3c",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#311113",
+                        "surface-variant": "#e9e1dc",
+                        "secondary-container": "#fec3c3",
+                        "surface-tint": "#a23c36",
+                        "outline": "#8a716f",
+                        "inverse-surface": "#34302c",
+                        "on-surface-variant": "#564240",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#1d1b18",
+                        "on-tertiary-fixed": "#1d1b19",
+                        "on-primary-fixed-variant": "#832521",
+                        "on-tertiary-container": "#9c9793",
+                        "tertiary-container": "#32302d",
+                        "primary": "#410002",
+                        "surface-container-highest": "#e9e1dc",
+                        "surface-container-low": "#fbf2ed",
+                        "surface-bright": "#fff8f5",
+                        "surface-container-high": "#efe6e2",
+                        "surface-container": "#f5ece7",
+                        "on-tertiary-fixed-variant": "#494643",
+                        "on-primary-container": "#ec746a",
+                        "inverse-on-surface": "#f8efea",
+                        "inverse-primary": "#ffb4ac",
+                        "secondary": "#7f5253",
+                        "secondary-fixed-dim": "#f2b8b8",
+                        "secondary-fixed": "#ffdad9",
+                        "background": "#fff8f5",
+                        "on-secondary-container": "#7a4e4e",
+                        "surface": "#fff8f5",
+                        "tertiary-fixed": "#e7e1dd",
+                        "primary-fixed": "#ffdad6",
+                        "on-background": "#1e1b18",
+                        "tertiary-fixed-dim": "#cbc6c1",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#ddc0bd",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#ffb4ac"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter-mobile": "16px",
+                        "base": "8px",
+                        "max-width": "1280px",
+                        "margin-mobile": "20px",
+                        "gutter-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Manrope"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    },
+                    "boxShadow": {
+                        "ambient": "0 20px 40px -10px rgba(99, 13, 13, 0.04)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-lowest/80 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-base max-w-max-width mx-auto">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary-fixed" href="#">
+                VNB VOGUE
+            </a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-gutter-desktop">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b border-primary pb-1" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">About Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Contact</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Meet the Team</a>
+</nav>
+<button class="hidden md:block bg-primary-container text-white px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary transition-colors">
+                Book Appointment
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-[80px]">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="A highly detailed, sophisticated photograph of a luxury salon interior. Soft, warm lighting illuminates cream walls and deep burgundy velvet styling chairs. Large, arched mirrors reflect a minimalist, elegant space. The mood is serene, indulgent, and high-end, utilizing the Ethereal Rose design system palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtmWfGYJ15O5vH8hiNkrewY5nJZ1bPGn_D8fsVJcw-mgjekAFkkxiMpAeztuAhaLHPrXZzT_FvypEp0NEDMHgM-71L80SD09fHrVSDpAQnbglEGsrLpZt-gv-2F4gGloz6ullcJoiV7_HYjKq07QnA6bjlaw6VnzCLgjc7GQQRUprh6rxWLaWUrRJUSuh6Obyujow8PsMvNqWl3zE69liOxBX6_vZ5zYoGj8TvTgojk09FyuXz-LriRwiz4ae45xJqR2MPV6m2oXM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center gap-8 mt-20">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary">
+                    Redefining Modern Beauty &amp; Grooming
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Premium Hair, Beauty &amp; Nail Studio. Experience the epitome of luxury grooming in an environment designed for ultimate relaxation and refined style.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-white px-10 py-4 rounded-full font-label-md text-label-md hover:bg-primary transition-all shadow-ambient hover:scale-105">
+                        Book Appointment
+                    </button>
+<button class="border border-primary text-primary px-10 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container transition-colors">
+                        Our Services
+                    </button>
+</div>
+</div>
+</section>
+<!-- About Teaser -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-max-width mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 relative">
+<div class="aspect-[4/5] rounded-t-full overflow-hidden shadow-ambient relative z-10 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="An elegant, soft-focus portrait of a professional hairstylist working on a client in a modern, luxury salon. The lighting is bright yet diffused, highlighting the clean, minimalist aesthetic. The color palette features deep burgundy accents against pristine white and cream backgrounds, evoking Ethereal Rose." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNcqEgxohTW3DerPp7SgSkajunyvRKhJxROoL-yUa7WMnwlnkY5XvHpRXdslYm-gMNT_sXC6F19grOVlgQPx698SnrVVVxa09jdOeyRDAS-989_eVu_5N2vIuryLNn0NoE6zrjL6NM_J_Rb4bmfNrj_mTW1egjGpQQ01oFfpRQ5Bp4aB1KYmtMjP74b1J0703kk8l91n63yRs5ItBBZMsw2UIPmJaqKtqo9uiTW4gBZkwt5J3sPm_Qc0ViQ-XtWFlpXnOCa4HfGiQ"/>
+</div>
+<div class="absolute -bottom-8 -left-8 w-64 h-64 bg-surface-variant rounded-full -z-0"></div>
+</div>
+<div class="order-1 md:order-2 flex flex-col gap-6">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase">Our Story</span>
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary">A Sanctuary of Refined Artistry</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        At VNB VOGUE, we believe beauty is an art form deserving of a meticulous canvas. Founded on the principles of timeless elegance and modern technique, our studio offers a curated experience that transcends the ordinary salon visit. We blend premium products with unparalleled expertise to elevate your personal style in a space designed for tranquility.
+                    </p>
+<a class="font-label-md text-label-md text-primary border-b border-primary self-start mt-4 pb-1 hover:text-primary-container transition-colors" href="#">Discover Our Journey</a>
+</div>
+</div>
+</section>
+<!-- Services Highlight -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-max-width mx-auto flex flex-col gap-16">
+<div class="text-center flex flex-col gap-4">
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-lg text-primary">Curated Experiences</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Tailored treatments designed to enhance your natural beauty and provide profound relaxation.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="bg-surface-container-lowest p-8 shadow-ambient flex flex-col gap-6 group cursor-pointer hover:-translate-y-2 transition-transform duration-500">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-size: 32px;">content_cut</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Hair Artistry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Bespoke cutting, coloring, and styling tailored to your unique features and lifestyle.</p>
+<a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="#">
+                            Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-lowest p-8 shadow-ambient flex flex-col gap-6 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 md:-translate-y-8">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-size: 32px;">spa</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Advanced Esthetics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Rejuvenating skincare treatments using premium formulations to restore your natural glow.</p>
+<a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="#">
+                            Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-lowest p-8 shadow-ambient flex flex-col gap-6 group cursor-pointer hover:-translate-y-2 transition-transform duration-500">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-size: 32px;">brush</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Nail Studio</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Meticulous manicures and pedicures focusing on nail health and elegant finishes.</p>
+<a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="#">
+                            Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-tertiary-container dark:bg-tertiary-container mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-12 max-w-max-width mx-auto gap-8">
+<div class="font-display-lg text-headline-md text-on-tertiary-container text-center md:text-left">
+                VNB VOGUE
+            </div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-tertiary-container dark:text-on-tertiary-container hover:text-on-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-container dark:text-on-tertiary-container hover:text-on-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-tertiary-container dark:text-on-tertiary-container hover:text-on-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Careers</a>
+<a class="font-body-md text-body-md text-on-tertiary-container dark:text-on-tertiary-container hover:text-on-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Sustainability</a>
+</nav>
+<div class="font-body-md text-body-md text-on-tertiary-container text-center md:text-right opacity-80">
+                © 2024 VNB VOGUE Luxury Salon. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

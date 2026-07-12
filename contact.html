@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact Us - VNB VOGUE UNISEX SALON</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#1d1b18",
+                    "surface-dim": "#e1d8d4",
+                    "on-tertiary-container": "#9c9793",
+                    "primary-fixed": "#ffdad6",
+                    "on-primary-fixed": "#410002",
+                    "outline-variant": "#ddc0bd",
+                    "surface-tint": "#a23c36",
+                    "surface-container-high": "#efe6e2",
+                    "background": "#fff8f5",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f8efea",
+                    "secondary-fixed": "#ffdad9",
+                    "on-primary-container": "#ec746a",
+                    "on-surface": "#1e1b18",
+                    "inverse-primary": "#ffb4ac",
+                    "tertiary-container": "#32302d",
+                    "surface-bright": "#fff8f5",
+                    "on-surface-variant": "#564240",
+                    "inverse-surface": "#34302c",
+                    "surface-container-low": "#fbf2ed",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#643b3c",
+                    "on-tertiary-fixed-variant": "#494643",
+                    "surface-variant": "#e9e1dc",
+                    "surface": "#fff8f5",
+                    "primary-container": "#630d0d",
+                    "surface-container": "#f5ece7",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#1e1b18",
+                    "secondary-container": "#fec3c3",
+                    "on-tertiary-fixed": "#1d1b19",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "on-primary-fixed-variant": "#832521",
+                    "primary": "#410002",
+                    "tertiary-fixed-dim": "#cbc6c1",
+                    "tertiary-fixed": "#e7e1dd",
+                    "outline": "#8a716f",
+                    "on-secondary-fixed": "#311113",
+                    "surface-container-highest": "#e9e1dc",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#7a4e4e",
+                    "secondary": "#7f5253",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#f2b8b8"
+            },
+            "boxShadow": {
+                "soft-extruded": "8px 8px 16px #e9e1dc, -8px -8px 16px #ffffff",
+                "soft-pressed": "inset 8px 8px 16px #e9e1dc, inset -8px -8px 16px #ffffff",
+                "soft-sm": "4px 4px 8px #e9e1dc, -4px -4px 8px #ffffff",
+                "soft-hover": "12px 12px 20px #e9e1dc, -12px -12px 20px #ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter-desktop": "32px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "max-width": "1280px",
+                    "base": "8px",
+                    "gutter-mobile": "16px",
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "sans": ["Manrope", "sans-serif"],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "label-md": [
+                            "Manrope"
+                    ],
+                    "body-lg": [
+                            "Manrope"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Manrope"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        body {
+            background-color: #fff8f5;
+            color: #1e1b18;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Input Styles */
+        input[type="text"], input[type="email"], textarea {
+            background-color: #fff8f5;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            padding: 16px;
+            color: #1e1b18;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: inset 4px 4px 8px #e9e1dc, inset -4px -4px 8px #ffffff;
+        }
+        
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            outline: none;
+            border-color: #410002;
+            box-shadow: inset 4px 4px 8px #e9e1dc, inset -4px -4px 8px #ffffff, 0 0 0 2px rgba(65, 0, 2, 0.2);
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: #9c9793;
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Navigation Entrance Animation */
+        nav {
+            transform: translateY(-100%);
+            animation: navbarSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes navbarSlideDown {
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto transition-all duration-300 ease-in-out">
+            <!-- Brand Logo -->
+            <a class="font-display-lg text-headline-sm tracking-tighter text-on-surface hover:text-primary transition-colors" href="index.html">
+                VNB VOGUE
+            </a>
+            <!-- Desktop Navigation Links -->
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a></li>
+                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About Us</a></li>
+                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a></li>
+                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a></li>
+                <li><a aria-current="page" class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold bg-primary-container/10 px-4 py-2 rounded-full transition-colors duration-300" href="contact.html">Contact</a></li>
+                <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">Meet the Team</a></li>
+            </ul>
+            <!-- Trailing Action -->
+            <a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-surface text-primary font-label-md text-label-md uppercase tracking-widest rounded-full shadow-soft-extruded hover:shadow-soft-hover active:shadow-soft-pressed transition-all duration-300 text-center" href="book-appointment.html">
+                Book Appointment
+            </a>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-toggle" class="md:hidden text-on-surface p-2 focus:outline-none shadow-soft-extruded rounded-full active:shadow-soft-pressed transition-all">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 w-80 max-w-full bg-surface-container-lowest shadow-ambient transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6 border-l border-outline-variant/30">
+        <div class="flex justify-between items-center mb-8">
+            <span class="font-display-lg text-headline-md tracking-tighter text-primary">VNB VOGUE</span>
+            <button id="close-drawer" class="text-primary p-2 hover:bg-surface-container transition-colors rounded-full">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-6 font-label-md text-label-md uppercase tracking-widest">
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="index.html">Home</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="services.html">Services</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="about.html">About Us</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="gallery.html">Gallery</a>
+            <a class="text-primary border-b border-primary pb-1 self-start" href="contact.html">Contact</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="team.html">Meet the Team</a>
+        </nav>
+        <a href="book-appointment.html" class="mt-auto w-full bg-primary-container text-white py-4 rounded-full font-label-md text-label-md uppercase tracking-widest text-center shadow-ambient hover:bg-primary transition-all duration-300">
+            Book Appointment
+        </a>
+    </div>
+    <!-- Drawer Overlay -->
+    <div id="drawer-overlay" class="fixed inset-0 z-40 bg-on-surface/20 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+        <!-- Header Section -->
+        <div class="mb-16 md:mb-24 text-center max-w-3xl mx-auto fade-in-up">
+            <h1 class="font-display-lg text-headline-lg md:text-display-lg mb-6 uppercase text-primary">Get in Touch</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">We invite you to experience premium grooming. Contact us to book your exclusive appointment or inquire about our services.</p>
+        </div>
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            <!-- Left Column: Contact Info & Map -->
+            <div class="space-y-12">
+                <!-- Info Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <!-- Location -->
+                    <div class="space-y-4 p-6 rounded-DEFAULT shadow-soft-extruded bg-surface fade-in-up">
+                        <div class="flex items-center space-x-3 text-primary">
+                            <div class="w-10 h-10 rounded-full shadow-soft-pressed flex items-center justify-center bg-surface">
+                                <span class="material-symbols-outlined text-xl">location_on</span>
+                            </div>
+                            <h3 class="font-label-md text-label-md uppercase tracking-widest">Visit Us</h3>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            New Tippasandra Old 195, 4th Main Rd,<br/>
+                            Opposite Kamadhenu Mixture,<br/>
+                            HAL, HAL 3rd Stage,<br/>
+                            Bengaluru
+                        </p>
+                    </div>
+                    <!-- Connect -->
+                    <div class="space-y-4 p-6 rounded-DEFAULT shadow-soft-extruded bg-surface fade-in-up" style="transition-delay: 100ms;">
+                        <div class="flex items-center space-x-3 text-primary">
+                            <div class="w-10 h-10 rounded-full shadow-soft-pressed flex items-center justify-center bg-surface">
+                                <span class="material-symbols-outlined text-xl">alternate_email</span>
+                            </div>
+                            <h3 class="font-label-md text-label-md uppercase tracking-widest">Connect</h3>
+                        </div>
+                        <div class="flex flex-col space-y-3">
+                            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center space-x-2 animate-pulse-once" href="tel:+919876543210">
+                                <span class="material-symbols-outlined text-sm">call</span>
+                                <span>+91 98765 43210</span>
+                            </a>
+                            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center space-x-2" href="mailto:hello@vnbvogue.com">
+                                <span class="material-symbols-outlined text-sm">mail</span>
+                                <span>hello@vnbvogue.com</span>
+                            </a>
+                            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors mt-2 block" href="https://instagram.com/vnb_vogue.blr" rel="noopener noreferrer" target="_blank">
+                                <span class="flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                                    @vnb_vogue.blr
+                                    <span class="material-symbols-outlined ml-1 text-sm">open_in_new</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Hours -->
+                    <div class="space-y-4 sm:col-span-2 mt-4 p-6 rounded-DEFAULT shadow-soft-extruded bg-surface fade-in-up" style="transition-delay: 200ms;">
+                        <div class="flex items-center space-x-3 text-primary">
+                            <div class="w-10 h-10 rounded-full shadow-soft-pressed flex items-center justify-center bg-surface">
+                                <span class="material-symbols-outlined text-xl">schedule</span>
+                            </div>
+                            <h3 class="font-label-md text-label-md uppercase tracking-widest">Hours</h3>
+                        </div>
+                        <ul class="font-body-md text-body-md text-on-surface-variant space-y-3 w-full">
+                            <li class="flex justify-between border-b border-surface-variant pb-2"><span>Monday - Friday</span> <span class="font-semibold text-on-surface">10:00 AM - 9:00 PM</span></li>
+                            <li class="flex justify-between pb-2"><span>Saturday - Sunday</span> <span class="font-semibold text-on-surface">9:00 AM - 10:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Map Placeholder -->
+                <div class="w-full h-64 md:h-80 bg-surface-container-high rounded-DEFAULT shadow-soft-extruded overflow-hidden relative group cursor-pointer fade-in-up">
+                    <img loading="lazy" alt="Map Location of VNB Vogue Salon Bengaluru" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB35TSd46MQsxArhdp4IJ1nO5i-VLlGW98y2mzeDDeGRqJB0iWSzvWZw-APTwPat1g9KDd8UXmVs6rAJVikwbDI5NfTV8WcE5xs80GNtgAx_uM1E5Mg7UH55b0hsIP0FG45mdDmvvODy24QcvcZIxsdA8ebaxrOiVUHGbsyJ7VgErSJl2d6hHg5693tlEwW_JJFBT93BHJZX81MsnFIvyzCZ3JvCxs5eF5M_bwQKLSKZ1ksWRIDW01KIgHEev6GEzyWeE0RDszO7zs"/>
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="bg-surface/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-soft-sm flex items-center space-x-2 text-primary">
+                            <span class="material-symbols-outlined">map</span>
+                            <span class="font-label-sm text-label-sm uppercase tracking-widest">View on Maps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Contact Form -->
+            <div class="bg-surface p-8 md:p-12 rounded-DEFAULT shadow-soft-extruded relative fade-in-up" style="transition-delay: 150ms;">
+                <h2 class="font-headline-md text-headline-md mb-8 text-primary">Send a Message</h2>
+                <form id="contact-form" class="space-y-6" novalidate>
+                    <!-- Name Field -->
+                    <div class="space-y-2">
+                        <label class="block text-label-sm uppercase tracking-widest text-on-surface-variant ml-2" for="name">Full Name</label>
+                        <input class="block w-full focus:ring-0" id="name" name="name" placeholder="John Doe" required type="text"/>
+                        <span id="name-error" class="hidden text-error font-body-md text-sm ml-2">Please enter your name.</span>
+                    </div>
+                    <!-- Email Field -->
+                    <div class="space-y-2">
+                        <label class="block text-label-sm uppercase tracking-widest text-on-surface-variant ml-2" for="email">Email Address</label>
+                        <input class="block w-full focus:ring-0" id="email" name="email" placeholder="john@example.com" required type="email"/>
+                        <span id="email-error" class="hidden text-error font-body-md text-sm ml-2">Please enter a valid email address.</span>
+                    </div>
+                    <!-- Service Selection (Custom Dropdown visually mapped as chips for higher-end feel) -->
+                    <div class="space-y-4">
+                        <label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant ml-2">Inquiry Type</label>
+                        <div class="flex flex-wrap gap-4 p-2">
+                            <label class="cursor-pointer">
+                                <input checked class="peer sr-only" name="inquiry_type" type="radio" value="booking"/>
+                                <span class="inline-block px-6 py-3 rounded-full bg-surface shadow-soft-extruded font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant peer-checked:shadow-soft-pressed peer-checked:text-primary transition-all duration-300">Booking</span>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input class="peer sr-only" name="inquiry_type" type="radio" value="services"/>
+                                <span class="inline-block px-6 py-3 rounded-full bg-surface shadow-soft-extruded font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant peer-checked:shadow-soft-pressed peer-checked:text-primary transition-all duration-300">Services</span>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input class="peer sr-only" name="inquiry_type" type="radio" value="other"/>
+                                <span class="inline-block px-6 py-3 rounded-full bg-surface shadow-soft-extruded font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant peer-checked:shadow-soft-pressed peer-checked:text-primary transition-all duration-300">Other</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Message Field -->
+                    <div class="space-y-2 mt-6">
+                        <label class="block text-label-sm uppercase tracking-widest text-on-surface-variant ml-2" for="message">Your Message</label>
+                        <textarea class="block w-full focus:ring-0 resize-y min-h-[120px]" id="message" name="message" placeholder="How can we help you?" required rows="4"></textarea>
+                        <span id="message-error" class="hidden text-error font-body-md text-sm ml-2">Please enter your message.</span>
+                    </div>
+                    <!-- Submit Button -->
+                    <button class="w-full mt-8 py-4 px-8 bg-surface text-primary font-label-md text-label-md uppercase tracking-widest rounded-full shadow-soft-extruded hover:shadow-soft-hover active:shadow-soft-pressed transition-all duration-300 flex items-center justify-center space-x-2 group" type="submit">
+                        <span id="submit-text">Send Message</span>
+                        <span id="submit-icon" class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Neumorphic Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-on-surface/20 backdrop-blur-md opacity-0 transition-opacity duration-300">
+        <div class="bg-surface p-8 md:p-12 rounded-xl shadow-soft-hover max-w-md w-full text-center border border-outline-variant/20 flex flex-col items-center gap-6">
+            <div class="w-16 h-16 rounded-full shadow-soft-pressed flex items-center justify-center text-primary bg-surface mb-2">
+                <span class="material-symbols-outlined text-3xl">check</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary uppercase">Thank You</h3>
+            <p id="success-modal-message" class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Your message has been successfully sent. We will get back to you shortly.
+            </p>
+            <button id="close-success-modal" class="px-8 py-3 bg-surface text-primary font-label-md text-label-md uppercase tracking-widest rounded-full shadow-soft-extruded hover:shadow-soft-hover active:shadow-soft-pressed transition-all duration-300 w-full mt-4">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full py-16 bg-surface shadow-[inset_0_4px_6px_rgba(233,225,220,0.5)] mt-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <!-- Brand & Copyright -->
+            <div class="col-span-1 md:col-span-2 space-y-4">
+                <div class="font-headline-md text-headline-md text-primary uppercase">
+                    VNB VOGUE
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2024 VNB VOGUE UNISEX SALON. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+            <!-- Links Column 1 -->
+            <div class="space-y-4">
+                <h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Legal</h4>
+                <ul class="space-y-3">
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Links Column 2 -->
+            <div class="space-y-4">
+                <h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Social</h4>
+                <ul class="space-y-3">
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center space-x-2" href="https://instagram.com/vnb_vogue.blr" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm">photo_camera</span><span>Instagram</span></a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center space-x-2" href="#"><span class="material-symbols-outlined text-sm">thumb_up</span><span>Facebook</span></a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center space-x-2" href="contact.html"><span class="material-symbols-outlined text-sm">map</span><span>Location</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Navigation Toggle
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            const closeBtn = document.getElementById('close-drawer');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+
+            if (toggleBtn && drawer && overlay) {
+                const openDrawer = () => {
+                    drawer.classList.remove('translate-x-full');
+                    overlay.classList.remove('opacity-0', 'pointer-events-none');
+                    overlay.classList.add('opacity-100');
+                    document.body.style.overflow = 'hidden';
+                };
+
+                const closeDrawer = () => {
+                    drawer.classList.add('translate-x-full');
+                    overlay.classList.remove('opacity-100');
+                    overlay.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = '';
+                };
+
+                toggleBtn.addEventListener('click', openDrawer);
+                if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+                overlay.addEventListener('click', closeDrawer);
+            }
+
+            // Scroll Entrance observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+
+            // Sticky Navigation Scroll Animation
+            const navHeader = document.querySelector('nav');
+            const navInner = navHeader ? navHeader.querySelector('div') : null;
+            if (navHeader) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        navHeader.classList.add('shadow-md');
+                        if (navInner) {
+                            navInner.classList.replace('h-20', 'h-16');
+                        }
+                    } else {
+                        navHeader.classList.remove('shadow-md');
+                        if (navInner) {
+                            navInner.classList.replace('h-16', 'h-20');
+                        }
+                    }
+                });
+            }
+
+            // Form Interactive Validation and Feedback
+            const form = document.getElementById('contact-form');
+            const successModal = document.getElementById('success-modal');
+            const closeSuccessModalBtn = document.getElementById('close-success-modal');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const submitText = document.getElementById('submit-text');
+            const submitIcon = document.getElementById('submit-icon');
+
+            // Inputs
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+
+            // Errors
+            const nameError = document.getElementById('name-error');
+            const emailError = document.getElementById('email-error');
+            const messageError = document.getElementById('message-error');
+
+            function validateEmail(email) {
+                const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            // Real-time validation clears
+            nameInput.addEventListener('input', () => {
+                nameInput.style.borderColor = '';
+                nameError.classList.add('hidden');
+            });
+            emailInput.addEventListener('input', () => {
+                emailInput.style.borderColor = '';
+                emailError.classList.add('hidden');
+            });
+            messageInput.addEventListener('input', () => {
+                messageInput.style.borderColor = '';
+                messageError.classList.add('hidden');
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                // Validate Name
+                if (!nameInput.value.trim()) {
+                    nameInput.style.borderColor = '#ba1a1a';
+                    nameError.classList.remove('hidden');
+                    isValid = false;
+                }
+
+                // Validate Email
+                if (!emailInput.value.trim() || !validateEmail(emailInput.value.trim())) {
+                    emailInput.style.borderColor = '#ba1a1a';
+                    emailError.classList.remove('hidden');
+                    isValid = false;
+                }
+
+                // Validate Message
+                if (!messageInput.value.trim()) {
+                    messageInput.style.borderColor = '#ba1a1a';
+                    messageError.classList.remove('hidden');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    // Focus on the first invalid field
+                    const firstInvalid = form.querySelector('input[style*="#ba1a1a"], textarea[style*="#ba1a1a"]');
+                    if (firstInvalid) firstInvalid.focus();
+                    return;
+                }
+
+                // Submit animation
+                const originalText = submitText.textContent;
+                const originalIcon = submitIcon.textContent;
+                
+                submitText.textContent = 'Sending...';
+                submitIcon.textContent = 'sync';
+                submitIcon.classList.add('animate-spin');
+                submitBtn.classList.replace('shadow-soft-extruded', 'shadow-soft-pressed');
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    // Trigger custom success modal
+                    successModal.classList.remove('hidden');
+                    successModal.classList.add('flex');
+                    setTimeout(() => {
+                        successModal.classList.remove('opacity-0');
+                        successModal.classList.add('opacity-100');
+                    }, 50);
+
+                    // Reset form submit button state
+                    submitText.textContent = originalText;
+                    submitIcon.textContent = originalIcon;
+                    submitIcon.classList.remove('animate-spin');
+                    submitBtn.classList.replace('shadow-soft-pressed', 'shadow-soft-extruded');
+                    submitBtn.disabled = false;
+                    form.reset();
+                }, 1500);
+            });
+
+            if (closeSuccessModalBtn) {
+                closeSuccessModalBtn.addEventListener('click', () => {
+                    successModal.classList.remove('opacity-100');
+                    successModal.classList.add('opacity-0');
+                    setTimeout(() => {
+                        successModal.classList.remove('flex');
+                        successModal.classList.add('hidden');
+                    }, 300);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

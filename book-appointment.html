@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Book an Appointment - VNB VOGUE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#630d0d",
+                        "on-primary-fixed": "#410002",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#e1d8d4",
+                        "on-surface": "#1e1b18",
+                        "on-secondary-fixed-variant": "#643b3c",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#311113",
+                        "surface-variant": "#e9e1dc",
+                        "secondary-container": "#fec3c3",
+                        "surface-tint": "#a23c36",
+                        "outline": "#8a716f",
+                        "inverse-surface": "#34302c",
+                        "on-surface-variant": "#564240",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#1d1b18",
+                        "on-tertiary-fixed": "#1d1b19",
+                        "on-primary-fixed-variant": "#832521",
+                        "on-tertiary-container": "#9c9793",
+                        "tertiary-container": "#32302d",
+                        "primary": "#410002",
+                        "surface-container-highest": "#e9e1dc",
+                        "surface-container-low": "#fbf2ed",
+                        "surface-bright": "#fff8f5",
+                        "surface-container-high": "#efe6e2",
+                        "surface-container": "#f5ece7",
+                        "on-tertiary-fixed-variant": "#494643",
+                        "on-primary-container": "#ec746a",
+                        "inverse-on-surface": "#f8efea",
+                        "inverse-primary": "#ffb4ac",
+                        "secondary": "#7f5253",
+                        "secondary-fixed-dim": "#f2b8b8",
+                        "secondary-fixed": "#ffdad9",
+                        "background": "#fff8f5",
+                        "on-secondary-container": "#7a4e4e",
+                        "surface": "#fff8f5",
+                        "tertiary-fixed": "#e7e1dd",
+                        "primary-fixed": "#ffdad6",
+                        "on-background": "#1e1b18",
+                        "tertiary-fixed-dim": "#cbc6c1",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#ddc0bd",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#ffb4ac"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter-mobile": "16px",
+                        "base": "8px",
+                        "max-width": "1280px",
+                        "margin-mobile": "20px",
+                        "gutter-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Manrope"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    },
+                    "boxShadow": {
+                        "ambient": "0 20px 40px -10px rgba(99, 13, 13, 0.04)"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            overflow-x: hidden;
+        }
+        .luxury-input {
+            background-color: #ffffff;
+            border: 1px solid theme('colors.outline-variant');
+            border-radius: 0.25rem;
+            padding: 12px 16px;
+            color: theme('colors.on-surface');
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .luxury-input:focus {
+            outline: none;
+            border-color: theme('colors.primary');
+            box-shadow: 0 0 0 2px rgba(99, 13, 13, 0.1);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Navigation Entrance Animation */
+        nav {
+            transform: translateY(-100%);
+            animation: navbarSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes navbarSlideDown {
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-white flex flex-col min-h-screen">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto transition-all duration-300 ease-in-out">
+            <a class="font-display-lg text-headline-md tracking-tighter text-on-surface" href="index.html">VNB VOGUE</a>
+            <div class="hidden md:flex gap-8 items-center font-label-md text-label-md uppercase tracking-widest">
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About Us</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="gallery.html">Gallery</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="contact.html">Contact</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">Meet the Team</a>
+            </div>
+            <a href="book-appointment.html" class="hidden md:block bg-primary-container text-white px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary transition-colors text-center font-bold">
+                Book Appointment
+            </a>
+            <button id="mobile-menu-toggle" class="md:hidden text-on-surface p-2 rounded-full">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 w-80 max-w-full bg-surface-container-lowest shadow-ambient transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6 border-l border-outline-variant/30">
+        <div class="flex justify-between items-center mb-8">
+            <span class="font-display-lg text-headline-md tracking-tighter text-primary">VNB VOGUE</span>
+            <button id="close-drawer" class="text-primary p-2 hover:bg-surface-container transition-colors rounded-full">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-6 font-label-md text-label-md uppercase tracking-widest">
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="index.html">Home</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="services.html">Services</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="about.html">About Us</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="gallery.html">Gallery</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="contact.html">Contact</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="team.html">Meet the Team</a>
+        </nav>
+        <a href="book-appointment.html" class="mt-auto w-full bg-primary-container text-white py-4 rounded-full font-label-md text-label-md uppercase tracking-widest text-center shadow-ambient hover:bg-primary transition-all duration-300">
+            Book Appointment
+        </a>
+    </div>
+    <!-- Drawer Overlay -->
+    <div id="drawer-overlay" class="fixed inset-0 z-40 bg-on-surface/20 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-32 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full">
+        <!-- Page Header -->
+        <header class="text-center mb-16 fade-in-up">
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Reserve Your Experience</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Immerse yourself in unisex luxury. Select your desired treatments, date, time, and stylist to reserve your personal session.
+            </p>
+        </header>
+
+        <form id="booking-form" novalidate>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Form Steps -->
+                <div class="lg:col-span-8 space-y-12">
+                    
+                    <!-- Step 1: Branch Selection -->
+                    <section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-ambient fade-in-up">
+                        <h2 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary font-light">location_on</span>
+                            1. Select Location
+                        </h2>
+                        <select id="booking-branch" class="luxury-input font-body-md text-body-md py-3 cursor-pointer" required>
+                            <option value="" disabled selected>Choose a VNB Vogue branch...</option>
+                            <option value="VNB Vogue: Indiranagar">VNB Vogue: Indiranagar Studio (100 Feet Rd)</option>
+                            <option value="VNB Vogue: New Tippasandra">VNB Vogue: New Tippasandra (4th Main Rd)</option>
+                            <option value="VNB Vogue: Koramangala">VNB Vogue: Koramangala (80 Feet Rd)</option>
+                            <option value="VNB Vogue: Sadashivanagar">VNB Vogue: Sadashivanagar (Vyalikaval)</option>
+                        </select>
+                        <span id="branch-error" class="hidden text-error font-body-md text-sm mt-2 block">Please select a location.</span>
+                    </section>
+
+                    <!-- Step 2: Service Selection -->
+                    <section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-ambient fade-in-up" style="transition-delay: 100ms;">
+                        <h2 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary font-light">spa</span>
+                            2. Select Service
+                        </h2>
+                        <!-- Category Tabs -->
+                        <div class="flex gap-4 mb-8 border-b border-outline-variant/30 pb-4" id="category-tabs">
+                            <button type="button" data-cat="hair" class="category-btn pb-2 font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary">Hair Artistry</button>
+                            <button type="button" data-cat="beauty" class="category-btn pb-2 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Beauty &amp; Nails</button>
+                        </div>
+                        
+                        <!-- Services List Container -->
+                        <div class="space-y-4" id="services-container">
+                            <!-- Dynamically Populated -->
+                        </div>
+                        <span id="service-error" class="hidden text-error font-body-md text-sm mt-4 block">Please choose at least one treatment.</span>
+                    </section>
+
+                    <!-- Step 3: Date, Time & Stylist -->
+                    <section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-ambient fade-in-up" style="transition-delay: 150ms;">
+                        <h2 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary font-light">calendar_today</span>
+                            3. Select Date, Time &amp; Artist
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-2" for="booking-date">Appointment Date</label>
+                                    <input id="booking-date" class="luxury-input" type="date" required/>
+                                    <span id="date-error" class="hidden text-error font-body-md text-sm mt-2 block">Please select a valid date.</span>
+                                </div>
+                                <div>
+                                    <label class="block font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-2" for="booking-stylist">Select Stylist / Artist</label>
+                                    <select id="booking-stylist" class="luxury-input cursor-pointer">
+                                        <option value="Any Available Artisan">Any Available Artisan</option>
+                                        <option value="Marcus Thorne (Creative Director)">Marcus Thorne (Creative Director)</option>
+                                        <option value="Elena Rossi (Master Colorist)">Elena Rossi (Master Colorist)</option>
+                                        <option value="Sofia Chen (Senior Barber)">Sofia Chen (Senior Barber)</option>
+                                        <option value="Julian Vance (Texture Specialist)">Julian Vance (Texture Specialist)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-4">Available Time Slots</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="time-slots-container">
+                                    <!-- Time slot buttons -->
+                                    <button type="button" data-time="10:00 AM" class="time-slot border border-outline-variant rounded py-3 text-center hover:bg-surface-container transition-colors font-body-md text-body-md">10:00 AM</button>
+                                    <button type="button" data-time="11:30 AM" class="time-slot border border-primary bg-primary-container/10 rounded py-3 text-center text-primary font-medium">11:30 AM</button>
+                                    <button type="button" data-time="01:00 PM" class="time-slot border border-outline-variant rounded py-3 text-center hover:bg-surface-container transition-colors font-body-md text-body-md">01:00 PM</button>
+                                    <button type="button" data-time="02:30 PM" class="time-slot border border-outline-variant rounded py-3 text-center hover:bg-surface-container transition-colors font-body-md text-body-md">02:30 PM</button>
+                                    <button type="button" data-time="04:00 PM" class="time-slot border border-outline-variant rounded py-3 text-center hover:bg-surface-container transition-colors font-body-md text-body-md">04:00 PM</button>
+                                    <button type="button" data-time="05:30 PM" class="time-slot border border-outline-variant rounded py-3 text-center hover:bg-surface-container transition-colors font-body-md text-body-md">05:30 PM</button>
+                                    <button type="button" data-time="07:00 PM" class="time-slot border border-outline-variant rounded py-3 text-center hover:bg-surface-container transition-colors font-body-md text-body-md">07:00 PM</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Step 4: Personal Information -->
+                    <section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-ambient fade-in-up" style="transition-delay: 200ms;">
+                        <h2 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary font-light">person</span>
+                            4. Your Details
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-label-sm uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="firstName">First Name</label>
+                                <input class="luxury-input" id="firstName" name="firstName" placeholder="John" required type="text"/>
+                                <span id="first-name-error" class="hidden text-error font-body-md text-sm mt-2 block">Please enter your first name.</span>
+                            </div>
+                            <div>
+                                <label class="block text-label-sm uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="lastName">Last Name</label>
+                                <input class="luxury-input" id="lastName" name="lastName" placeholder="Doe" required type="text"/>
+                                <span id="last-name-error" class="hidden text-error font-body-md text-sm mt-2 block">Please enter your last name.</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <div>
+                                <label class="block text-label-sm uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="email">Email Address</label>
+                                <input class="luxury-input" id="email" name="email" placeholder="john@example.com" required type="email"/>
+                                <span id="email-error" class="hidden text-error font-body-md text-sm mt-2 block">Please enter a valid email address.</span>
+                            </div>
+                            <div>
+                                <label class="block text-label-sm uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="phone">Phone Number</label>
+                                <input class="luxury-input" id="phone" name="phone" placeholder="+91 98765 43210" required type="tel"/>
+                                <span id="phone-error" class="hidden text-error font-body-md text-sm mt-2 block">Please enter your phone number.</span>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label class="block text-label-sm uppercase tracking-widest text-on-surface-variant mb-2 ml-1" for="requests">Special Requests (Optional)</label>
+                            <textarea class="luxury-input resize-none" id="requests" name="requests" placeholder="Fringe styling preferences, hair allergies, specific drink requests..." rows="3"></textarea>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Sidebar Summary Card -->
+                <div class="lg:col-span-4 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="sticky top-28 bg-surface-container p-8 rounded-xl border border-outline-variant/30 shadow-ambient flex flex-col gap-6">
+                        <h3 class="font-display-lg text-2xl text-primary border-b border-outline-variant/40 pb-4">Booking Summary</h3>
+                        <div class="space-y-4 text-on-surface">
+                            <div>
+                                <p class="font-label-md text-xs uppercase tracking-wider text-on-surface-variant">Location</p>
+                                <p id="summary-branch" class="font-body-md text-body-md mt-1 font-semibold text-primary">Please Select Location</p>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-xs uppercase tracking-wider text-on-surface-variant">Treatment</p>
+                                <p id="summary-service" class="font-body-md text-body-md mt-1 font-semibold text-primary">No Service Selected</p>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-xs uppercase tracking-wider text-on-surface-variant">Date &amp; Time</p>
+                                <p id="summary-datetime" class="font-body-md text-body-md mt-1 font-semibold text-primary">Date &amp; Time Unselected</p>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-xs uppercase tracking-wider text-on-surface-variant">Stylist / Artist</p>
+                                <p id="summary-stylist" class="font-body-md text-body-md mt-1 font-semibold text-primary">Any Available Artisan</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-outline-variant/40 pt-4 flex justify-between items-center">
+                            <span class="font-headline-md text-xl text-primary">Total Price</span>
+                            <span id="summary-total" class="font-display-lg text-2xl text-primary">$0</span>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-container text-white py-4 font-label-md text-label-md uppercase tracking-widest rounded-full hover:bg-primary transition-all duration-300 text-center font-semibold shadow-ambient">
+                            Confirm Reservation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-- Success Overlay Popup Modal -->
+    <div id="booking-success-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-on-surface/20 backdrop-blur-md opacity-0 transition-opacity duration-300">
+        <div class="bg-surface-bright p-8 md:p-12 rounded-xl shadow-ambient max-w-lg w-full text-center border border-outline-variant/30 flex flex-col items-center gap-6">
+            <div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary mb-2">
+                <span class="material-symbols-outlined text-4xl">check_circle</span>
+            </div>
+            <h3 class="font-display-lg text-3xl text-primary">Reservation Confirmed</h3>
+            <div class="w-full text-left bg-surface-container p-6 rounded-lg border border-outline-variant/20 space-y-3 font-body-md text-body-md">
+                <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                    <span class="text-on-surface-variant font-medium">Booking Reference</span>
+                    <span id="modal-ref" class="font-semibold text-primary">VNB-5291</span>
+                </div>
+                <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                    <span class="text-on-surface-variant font-medium">Location</span>
+                    <span id="modal-branch" class="font-semibold">Indiranagar</span>
+                </div>
+                <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                    <span class="text-on-surface-variant font-medium">Treatment</span>
+                    <span id="modal-service" class="font-semibold">Hair Cut</span>
+                </div>
+                <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+                    <span class="text-on-surface-variant font-medium">Date &amp; Time</span>
+                    <span id="modal-datetime" class="font-semibold">Mon, Oct 12 • 11:30 AM</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-on-surface-variant font-medium">Stylist</span>
+                    <span id="modal-stylist" class="font-semibold">Any Available Artisan</span>
+                </div>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+                Your reservation details are ready. Click below to instantly send your appointment request to VNB Vogue via WhatsApp.
+            </p>
+            <button id="modal-close" class="px-8 py-3 bg-primary-container text-white font-label-md text-label-md uppercase tracking-widest rounded-full hover:bg-primary transition-all duration-300 w-full mt-4 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.335 4.97L2 22l5.233-1.371a9.94 9.94 0 004.773 1.21h.005c5.502 0 9.987-4.478 9.989-9.985A9.984 9.984 0 0012.012 2zm4.721 13.916c-.26.732-1.503 1.34-2.072 1.425-.561.084-1.127.147-3.664-.853-3.243-1.282-5.32-4.57-5.48-4.786-.16-.215-1.29-1.713-1.29-3.268 0-1.555.801-2.32 1.082-2.603.28-.282.61-.353.812-.353h.581c.183 0 .428-.07.671.517.26.623.882 2.146.958 2.302.076.155.127.338.026.541-.102.203-.153.328-.305.508-.152.18-.32.401-.457.538-.153.153-.312.32-.135.624.177.303.785 1.293 1.684 2.091.139.124.263.23.376.32 1.157 1.026 2.023 1.31 2.307 1.45.283.14.45.119.619-.071.17-.19.728-.846.922-1.136.195-.29.39-.241.656-.142.266.099 1.689.794 1.979.939.29.145.483.218.553.339.07.12.07.7-.19 1.433z"/></svg>
+                Send via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full bg-tertiary-container mt-20">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-12 max-w-max-width mx-auto gap-8">
+            <div class="font-display-lg text-headline-md text-on-tertiary-container text-center md:text-left">
+                VNB VOGUE
+            </div>
+            <nav class="flex flex-wrap justify-center gap-6">
+                <a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+                <a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+                <a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-tertiary transition-colors opacity-80 hover:opacity-100" href="contact.html">Location</a>
+            </nav>
+            <div class="font-body-md text-body-md text-on-tertiary-container text-center md:text-right opacity-80">
+                © 2024 VNB VOGUE Luxury Salon. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Logic Scripts -->
+    <script>
+        // Database of services
+        const servicesData = {
+            hair: [
+                { id: "hair-cut", name: "Hair Cut", price: 80, detail: "Precision cutting techniques tailored to your face shape." },
+                { id: "styling", name: "Styling", price: 60, detail: "Professional blowouts, curls, and updos for any occasion." },
+                { id: "coloring", name: "Coloring", price: 150, detail: "Expert color application including balayage and highlights." },
+                { id: "spa", name: "Spa", price: 120, detail: "Rejuvenating treatments to restore moisture and hair health." },
+                { id: "treatments", name: "Treatments", price: 200, detail: "Advanced keratin smoothing treatments for frizz-free hair." }
+            ],
+            beauty: [
+                { id: "facials", name: "Facials", price: 110, detail: "Customized premium facials to address skin concerns." },
+                { id: "cleanup", name: "Cleanup", price: 75, detail: "Deep cleansing and exfoliation to refresh your skin." },
+                { id: "makeup", name: "Makeup", price: 90, detail: "Professional makeup application for events or shoots." },
+                { id: "skin-treatments", name: "Skin Treatments", price: 150, detail: "Advanced microdermabrasion and chemical peels." },
+                { id: "grooming", name: "Grooming", price: 45, detail: "Refined grooming services including threading and waxing." }
+            ]
+        };
+
+        let selectedBranch = "";
+        let selectedCategory = "hair";
+        let selectedServices = [];
+        let selectedDate = "";
+        let selectedTime = "11:30 AM";
+        let selectedStylist = "Any Available Artisan";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            const closeBtn = document.getElementById('close-drawer');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+
+            if (toggleBtn && drawer && overlay) {
+                const openDrawer = () => {
+                    drawer.classList.remove('translate-x-full');
+                    overlay.classList.remove('opacity-0', 'pointer-events-none');
+                    overlay.classList.add('opacity-100');
+                    document.body.style.overflow = 'hidden';
+                };
+
+                const closeDrawer = () => {
+                    drawer.classList.add('translate-x-full');
+                    overlay.classList.remove('opacity-100');
+                    overlay.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = '';
+                };
+
+                toggleBtn.addEventListener('click', openDrawer);
+                if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+                overlay.addEventListener('click', closeDrawer);
+            }
+
+            // Scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+
+            // Sticky Navigation Scroll Animation
+            const navHeader = document.querySelector('nav');
+            const navInner = navHeader ? navHeader.querySelector('div') : null;
+            if (navHeader) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        navHeader.classList.add('shadow-md');
+                        if (navInner) {
+                            navInner.classList.replace('h-20', 'h-16');
+                        }
+                    } else {
+                        navHeader.classList.remove('shadow-md');
+                        if (navInner) {
+                            navInner.classList.replace('h-16', 'h-20');
+                        }
+                    }
+                });
+            }
+
+            // Set date input minimum to today
+            const dateInput = document.getElementById('booking-date');
+            const todayStr = new Date().toISOString().split('T')[0];
+            dateInput.min = todayStr;
+
+            // 1. Category Switch Tabs
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryBtns.forEach(b => {
+                        b.className = "category-btn pb-2 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors";
+                    });
+                    btn.className = "category-btn pb-2 font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary";
+                    selectedCategory = btn.getAttribute('data-cat');
+                    renderServicesList();
+                });
+            });
+
+            // Parse URL query parameter for preselected service
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceParam = urlParams.get('service');
+            
+            if (serviceParam) {
+                // Determine category of preselected service
+                let preselectedSrv = null;
+                if (servicesData.hair.some(s => s.id === serviceParam)) {
+                    selectedCategory = "hair";
+                    preselectedSrv = servicesData.hair.find(s => s.id === serviceParam);
+                } else if (servicesData.beauty.some(s => s.id === serviceParam)) {
+                    selectedCategory = "beauty";
+                    preselectedSrv = servicesData.beauty.find(s => s.id === serviceParam);
+                }
+                
+                // Match active tab styling
+                categoryBtns.forEach(btn => {
+                    const cat = btn.getAttribute('data-cat');
+                    if (cat === selectedCategory) {
+                        btn.className = "category-btn pb-2 font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary";
+                    } else {
+                        btn.className = "category-btn pb-2 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors";
+                    }
+                });
+
+                if (preselectedSrv) {
+                    selectedServices.push(preselectedSrv);
+                }
+            }
+
+            renderServicesList();
+            updateSummary();
+
+            // 2. Branch Dropdown Handler
+            const branchSelect = document.getElementById('booking-branch');
+            const branchError = document.getElementById('branch-error');
+            branchSelect.addEventListener('change', (e) => {
+                selectedBranch = e.target.value;
+                branchError.classList.add('hidden');
+                branchSelect.style.borderColor = '';
+                updateSummary();
+            });
+
+            // 3. Date Handler
+            const dateError = document.getElementById('date-error');
+            dateInput.addEventListener('change', (e) => {
+                selectedDate = e.target.value;
+                dateError.classList.add('hidden');
+                dateInput.style.borderColor = '';
+                updateSummary();
+            });
+
+            // 4. Stylist Dropdown Handler
+            const stylistSelect = document.getElementById('booking-stylist');
+            stylistSelect.addEventListener('change', (e) => {
+                selectedStylist = e.target.value;
+                updateSummary();
+            });
+
+            // 5. Time Slots Selector
+            const timeSlots = document.querySelectorAll('.time-slot');
+            timeSlots.forEach(slot => {
+                // If it's already active, initialize selectedTime
+                if (slot.classList.contains('border-primary')) {
+                    selectedTime = slot.getAttribute('data-time');
+                }
+                slot.addEventListener('click', () => {
+                    timeSlots.forEach(s => {
+                        s.className = "time-slot border border-outline-variant rounded py-3 text-center hover:bg-surface-container transition-colors font-body-md text-body-md";
+                    });
+                    slot.className = "time-slot border border-primary bg-primary-container/10 rounded py-3 text-center text-primary font-medium";
+                    selectedTime = slot.getAttribute('data-time');
+                    updateSummary();
+                });
+            });
+
+            // Render treatments list dynamically
+            function renderServicesList() {
+                const container = document.getElementById('services-container');
+                container.innerHTML = "";
+                const list = servicesData[selectedCategory] || [];
+
+                list.forEach(srv => {
+                    const isSelected = selectedServices.some(s => s.id === srv.id);
+                    
+                    const item = document.createElement('div');
+                    item.className = `flex items-center justify-between p-5 border rounded-lg cursor-pointer transition-all duration-300 ${
+                        isSelected 
+                        ? 'bg-primary-container/5 border-primary shadow-sm' 
+                        : 'border-outline-variant/40 bg-white hover:border-primary-container'
+                    }`;
+
+                    item.innerHTML = `
+                        <div class="flex items-center gap-4">
+                            <div class="w-6 h-6 rounded border flex items-center justify-center transition-colors ${
+                                isSelected ? 'bg-primary-container border-primary-container' : 'border-outline'
+                            }">
+                                <span class="material-symbols-outlined text-white text-lg ${isSelected ? 'block' : 'hidden'}">check</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline-md text-xl leading-snug text-primary font-medium">${srv.name}</h3>
+                                <p class="font-body-md text-label-md text-on-surface-variant mt-1">${srv.detail}</p>
+                            </div>
+                        </div>
+                        <span class="font-label-md text-label-md font-semibold text-primary">$${srv.price}</span>
+                    `;
+
+                    item.addEventListener('click', () => {
+                        const index = selectedServices.findIndex(s => s.id === srv.id);
+                        if (index > -1) {
+                            selectedServices.splice(index, 1);
+                        } else {
+                            selectedServices.push(srv);
+                        }
+                        
+                        document.getElementById('service-error').classList.add('hidden');
+                        renderServicesList();
+                        updateSummary();
+                    });
+
+                    container.appendChild(item);
+                });
+            }
+
+            // Update Dynamic Summary Card
+            function updateSummary() {
+                const branchEl = document.getElementById('summary-branch');
+                const serviceEl = document.getElementById('summary-service');
+                const dateTimeEl = document.getElementById('summary-datetime');
+                const stylistEl = document.getElementById('summary-stylist');
+                const totalEl = document.getElementById('summary-total');
+
+                // Location Summary
+                if (selectedBranch) {
+                    branchEl.textContent = selectedBranch.replace('VNB Vogue: ', '');
+                    branchEl.classList.remove('text-on-surface-variant');
+                } else {
+                    branchEl.textContent = "Please Select Location";
+                }
+
+                // Service Summary
+                if (selectedServices.length > 0) {
+                    serviceEl.innerHTML = selectedServices.map(s => s.name).join('<br/>');
+                    serviceEl.classList.remove('text-on-surface-variant');
+                } else {
+                    serviceEl.textContent = "No Service Selected";
+                }
+
+                // Date & Time Summary
+                if (selectedDate) {
+                    const dateObj = new Date(selectedDate);
+                    const formattedDate = dateObj.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+                    dateTimeEl.textContent = `${formattedDate} • ${selectedTime}`;
+                    dateTimeEl.classList.remove('text-on-surface-variant');
+                } else {
+                    dateTimeEl.textContent = `Date Unselected • ${selectedTime}`;
+                }
+
+                // Stylist Summary
+                stylistEl.textContent = selectedStylist.replace(' (Creative Director)', '').replace(' (Master Colorist)', '').replace(' (Senior Barber)', '').replace(' (Texture Specialist)', '');
+
+                // Total Price
+                const total = selectedServices.reduce((sum, s) => sum + s.price, 0);
+                totalEl.textContent = `$${total}`;
+            }
+
+            // 6. Form Submission and multi-step validation
+            const form = document.getElementById('booking-form');
+            const firstNameInput = document.getElementById('firstName');
+            const lastNameInput = document.getElementById('lastName');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+
+            const firstNameError = document.getElementById('first-name-error');
+            const lastNameError = document.getElementById('last-name-error');
+            const emailError = document.getElementById('email-error');
+            const phoneError = document.getElementById('phone-error');
+
+            function validateEmail(email) {
+                const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            // Real-time error clears
+            firstNameInput.addEventListener('input', () => {
+                firstNameInput.style.borderColor = '';
+                firstNameError.classList.add('hidden');
+            });
+            lastNameInput.addEventListener('input', () => {
+                lastNameInput.style.borderColor = '';
+                lastNameError.classList.add('hidden');
+            });
+            emailInput.addEventListener('input', () => {
+                emailInput.style.borderColor = '';
+                emailError.classList.add('hidden');
+            });
+            phoneInput.addEventListener('input', () => {
+                phoneInput.style.borderColor = '';
+                phoneError.classList.add('hidden');
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                // 1. Validate Location
+                if (!selectedBranch) {
+                    branchSelect.style.borderColor = '#ba1a1a';
+                    branchError.classList.remove('hidden');
+                    branchSelect.focus();
+                    isValid = false;
+                }
+
+                // 2. Validate Services
+                if (selectedServices.length === 0) {
+                    document.getElementById('service-error').classList.remove('hidden');
+                    if (isValid) {
+                        document.getElementById('services-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    isValid = false;
+                }
+
+                // 3. Validate Date
+                if (!selectedDate) {
+                    dateInput.style.borderColor = '#ba1a1a';
+                    dateError.classList.remove('hidden');
+                    if (isValid) dateInput.focus();
+                    isValid = false;
+                }
+
+                // 4. Validate Personal details
+                if (!firstNameInput.value.trim()) {
+                    firstNameInput.style.borderColor = '#ba1a1a';
+                    firstNameError.classList.remove('hidden');
+                    if (isValid) firstNameInput.focus();
+                    isValid = false;
+                }
+
+                if (!lastNameInput.value.trim()) {
+                    lastNameInput.style.borderColor = '#ba1a1a';
+                    lastNameError.classList.remove('hidden');
+                    if (isValid) lastNameInput.focus();
+                    isValid = false;
+                }
+
+                if (!emailInput.value.trim() || !validateEmail(emailInput.value.trim())) {
+                    emailInput.style.borderColor = '#ba1a1a';
+                    emailError.classList.remove('hidden');
+                    if (isValid) emailInput.focus();
+                    isValid = false;
+                }
+
+                if (!phoneInput.value.trim()) {
+                    phoneInput.style.borderColor = '#ba1a1a';
+                    phoneError.classList.remove('hidden');
+                    if (isValid) phoneInput.focus();
+                    isValid = false;
+                }
+
+                if (!isValid) return;
+
+                // Submit confirmation modal data loading
+                const successModal = document.getElementById('booking-success-modal');
+                const modalRef = document.getElementById('modal-ref');
+                const modalBranch = document.getElementById('modal-branch');
+                const modalService = document.getElementById('modal-service');
+                const modalDatetime = document.getElementById('modal-datetime');
+                const modalStylist = document.getElementById('modal-stylist');
+
+                // Generate booking code
+                const randomRef = 'VNB-' + Math.floor(1000 + Math.random() * 9000);
+                const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+                modalRef.textContent = randomRef;
+                modalBranch.textContent = selectedBranch.replace('VNB Vogue: ', '');
+                modalService.textContent = selectedServices.map(s => s.name).join(', ');
+                modalDatetime.textContent = `${formattedDate} @ ${selectedTime}`;
+                modalStylist.textContent = selectedStylist;
+
+                // Animate open success overlay
+                successModal.classList.remove('hidden');
+                successModal.classList.add('flex');
+                setTimeout(() => {
+                    successModal.classList.remove('opacity-0');
+                    successModal.classList.add('opacity-100');
+                }, 50);
+
+                // Success Modal Close / Redirect with WhatsApp Web link
+                document.getElementById('modal-close').addEventListener('click', () => {
+                    const branchName = selectedBranch.replace('VNB Vogue: ', '');
+                    const servicesText = selectedServices.map(s => s.name).join(', ');
+                    const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+                    const totalPrice = selectedServices.reduce((sum, s) => sum + s.price, 0);
+                    const clientName = `${firstNameInput.value.trim()} ${lastNameInput.value.trim()}`;
+                    const clientPhone = phoneInput.value.trim();
+                    const clientRequests = document.getElementById('requests').value.trim() || 'None';
+
+                    const waMessage = `🌸 *VNB VOGUE APPOINTMENT RESERVATION* 🌸\n\n` +
+                                      `Hello, I would like to book a luxury session with VNB Vogue. Here are my reservation details:\n\n` +
+                                      `📍 *Branch:* ${branchName}\n` +
+                                      `💆‍♀️ *Treatment(s):* ${servicesText}\n` +
+                                      `📅 *Date & Time:* ${formattedDate} @ ${selectedTime}\n` +
+                                      `✂️ *Stylist:* ${selectedStylist}\n` +
+                                      `💵 *Total Price:* $${totalPrice}\n\n` +
+                                      `*Client Details:*\n` +
+                                      `👤 *Name:* ${clientName}\n` +
+                                      `📞 *Phone:* ${clientPhone}\n` +
+                                      `💬 *Special Requests:* ${clientRequests}\n\n` +
+                                      `Thank you!`;
+
+                    const waUrl = `https://wa.me/917338087816?text=${encodeURIComponent(waMessage)}`;
+                    
+                    // Open WhatsApp API link
+                    window.open(waUrl, '_blank');
+
+                    // Animate dismiss modal and redirect
+                    successModal.classList.remove('opacity-100');
+                    successModal.classList.add('opacity-0');
+                    setTimeout(() => {
+                        successModal.classList.remove('flex');
+                        successModal.classList.add('hidden');
+                        form.reset();
+                        window.location.href = 'index.html';
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

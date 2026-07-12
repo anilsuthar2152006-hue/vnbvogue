@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>VNB VOGUE UNISEX SALON - Gallery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#1d1b18",
+                    "surface-dim": "#e1d8d4",
+                    "on-tertiary-container": "#9c9793",
+                    "primary-fixed": "#ffdad6",
+                    "on-primary-fixed": "#410002",
+                    "outline-variant": "#ddc0bd",
+                    "surface-tint": "#a23c36",
+                    "surface-container-high": "#efe6e2",
+                    "background": "#fff8f5",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f8efea",
+                    "secondary-fixed": "#ffdad9",
+                    "on-primary-container": "#ec746a",
+                    "on-surface": "#1e1b18",
+                    "inverse-primary": "#ffb4ac",
+                    "tertiary-container": "#32302d",
+                    "surface-bright": "#fff8f5",
+                    "on-surface-variant": "#564240",
+                    "inverse-surface": "#34302c",
+                    "surface-container-low": "#fbf2ed",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#643b3c",
+                    "on-tertiary-fixed-variant": "#494643",
+                    "surface-variant": "#e9e1dc",
+                    "surface": "#fff8f5",
+                    "primary-container": "#630d0d",
+                    "surface-container": "#f5ece7",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#1e1b18",
+                    "secondary-container": "#fec3c3",
+                    "on-tertiary-fixed": "#1d1b19",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "on-primary-fixed-variant": "#832521",
+                    "primary": "#410002",
+                    "tertiary-fixed-dim": "#cbc6c1",
+                    "tertiary-fixed": "#e7e1dd",
+                    "outline": "#8a716f",
+                    "on-secondary-fixed": "#311113",
+                    "surface-container-highest": "#e9e1dc",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#7a4e4e",
+                    "secondary": "#7f5253",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#f2b8b8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter-desktop": "32px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "max-width": "1280px",
+                    "base": "8px",
+                    "gutter-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "label-md": [
+                            "Manrope"
+                    ],
+                    "body-lg": [
+                            "Manrope"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Manrope"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            background-color: theme('colors.background');
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease-out;
+        }
+        .loading-bar-container {
+            width: 200px;
+            height: 6px;
+            background-color: theme('colors.surface-variant');
+            box-shadow: inset 2px 2px 4px rgba(0,0,0,0.05);
+            margin-top: 24px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+        .loading-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background-color: theme('colors.primary');
+            animation: load 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            border-radius: 9999px;
+        }
+        @keyframes load {
+            0% { width: 0%; }
+            50% { width: 45%; }
+            100% { width: 100%; }
+        }
+        .gallery-item-hover:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-item-hover:hover img {
+            transform: scale(1.05);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Navigation Entrance Animation */
+        nav {
+            transform: translateY(-100%);
+            animation: navbarSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes navbarSlideDown {
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col pt-20">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="text-primary font-headline-md">
+            <span class="material-symbols-outlined" style="font-size: 24px;">lens</span>
+        </div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-surface-variant transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center h-20 px-4 md:px-8 max-w-7xl mx-auto transition-all duration-300 ease-in-out">
+            <a class="font-display-lg text-headline-md tracking-tighter text-on-surface" href="index.html">
+                VNB VOGUE
+            </a>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8 font-label-md text-label-md uppercase tracking-widest">
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About Us</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+                <a class="text-primary font-bold bg-primary-container/10 px-4 py-2 rounded-full" href="gallery.html">Gallery</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="contact.html">Contact</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">Meet the Team</a>
+            </div>
+            <a href="book-appointment.html" class="hidden md:block bg-primary text-on-primary px-6 py-3 rounded-full uppercase font-label-md text-label-md tracking-widest transition-all duration-300 shadow-md hover:bg-on-primary-fixed-variant text-center">
+                Book Appointment
+            </a>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-toggle" class="md:hidden text-on-surface bg-surface-variant p-2 rounded-full shadow-sm">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 w-80 max-w-full bg-surface-container-lowest shadow-ambient transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6 border-l border-outline-variant/30">
+        <div class="flex justify-between items-center mb-8">
+            <span class="font-display-lg text-headline-md tracking-tighter text-primary">VNB VOGUE</span>
+            <button id="close-drawer" class="text-primary p-2 hover:bg-surface-container transition-colors rounded-full">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-6 font-label-md text-label-md uppercase tracking-widest">
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="index.html">Home</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="services.html">Services</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="about.html">About Us</a>
+            <a class="text-primary border-b border-primary pb-1 self-start" href="gallery.html">Gallery</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="contact.html">Contact</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors pb-1 self-start" href="team.html">Meet the Team</a>
+        </nav>
+        <a href="book-appointment.html" class="mt-auto w-full bg-primary-container text-white py-4 rounded-full font-label-md text-label-md uppercase tracking-widest text-center shadow-ambient hover:bg-primary transition-all duration-300">
+            Book Appointment
+        </a>
+    </div>
+    <!-- Drawer Overlay -->
+    <div id="drawer-overlay" class="fixed inset-0 z-40 bg-on-surface/20 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 md:px-8 pb-32 pt-16">
+        <!-- Gallery Header -->
+        <header class="text-center mb-16 md:mb-24 fade-in-up">
+            <h1 class="font-display-lg text-display-lg text-on-surface mb-6 uppercase tracking-tight">Our Work</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                A curated selection of our finest transformations, showcasing the artistry and precision of the VNB VOGUE team.
+            </p>
+        </header>
+
+        <!-- Bento Grid Gallery -->
+        <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-4 gap-8 md:h-[1200px]">
+            <!-- Large Feature - Hair Styling (Spans 2 cols, 2 rows) -->
+            <div class="gallery-item-hover relative overflow-hidden bg-surface rounded-xl md:col-span-2 md:row-span-2 aspect-square md:aspect-auto shadow-md p-2 cursor-pointer fade-in-up">
+                <div class="w-full h-full rounded-lg overflow-hidden relative">
+                    <img alt="Hair Styling" class="w-full h-full object-cover transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIwpreOCwAU4SF5BKZSnng_hBA1pCGci9L1jlm7TY31JeDPSVOR2TlGsNQJhrOc5jVssk6KEC8DD6UaelbGefWnwsL3EdNpvR2DNbGPU9LaBpwiQZ7i20oboJDZwNwc9Tan_Ra8chHQ75OlasTnL0pArIK9XqRtJmESUL359djUVJip4AG1vPRpRTYdavfh0YkmPD4Dpz4ppUXv8CdGU7VOJItre6qOlh5G1CD4R2YKOxO1-q_ixoE2LGErA1XwK4tyEGo7mNR-2c"/>
+                    <div class="gallery-overlay absolute inset-0 bg-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="font-label-md text-label-md text-primary uppercase tracking-widest bg-surface/90 rounded-full px-4 py-1 mb-3 w-max shadow-sm">Hair Artistry</span>
+                        <h3 class="font-headline-md text-headline-md text-on-surface font-semibold drop-shadow-md">Signature Blowout</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Standard Size - Nails -->
+            <div class="gallery-item-hover relative overflow-hidden bg-surface rounded-xl aspect-square shadow-md p-2 cursor-pointer fade-in-up" style="transition-delay: 100ms;">
+                <div class="w-full h-full rounded-lg overflow-hidden relative">
+                    <img alt="Nail Art" class="w-full h-full object-cover transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy_Uegt8f3xYFKwY2OgS6OzsdZtNzLTH_vSLUwEv56kCEP8kkOIP-bmrBEMcubw_DTfC6KjvONfAysL8tA0sPd9lQvJffc1cCpMOA7bU7_MObZ2s71L0xOO5BE4avPrrFb91Cy0VHmnOFj-3Xf33W9xnutCDiPj7lVQTb0fFcIrHJ9w-EgtlC13mv1_hvavmYQIVF0yIVk8qWWs4rpJuKkvvuBYw2pg-nrzxHwvfNM_mIHoE7UzkJhQ45QY_j-4WyPJ1NgkDCxQzE"/>
+                    <div class="gallery-overlay absolute inset-0 bg-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="font-label-md text-label-md text-primary uppercase tracking-widest bg-surface/90 rounded-full px-4 py-1 mb-2 w-max shadow-sm">Nails</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface font-semibold drop-shadow-md">Gold Foil Detail</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Standard Size - Grooming -->
+            <div class="gallery-item-hover relative overflow-hidden bg-surface rounded-xl aspect-square shadow-md p-2 cursor-pointer fade-in-up" style="transition-delay: 200ms;">
+                <div class="w-full h-full rounded-lg overflow-hidden relative">
+                    <img alt="Men's Grooming" class="w-full h-full object-cover transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5lPGMg4BoUlgFBPW774RsGVA54Fr_mPOz8doO-CxJGDMwil0Zo97S6f2dFDcmw-USgokBgOY2EhfSLmt_IYYV7mVsb5bD6bwcgYSy15C8Ff9CVdl1heJGzKWBzBHZJBEOLz3O7mqvPwry0-4Mxq-DF6PtAIjFANmjFvb_LTq45hcenjaP-ZIEhRN8ESVgLVjYN6TAqoS-BnYBVG5Ts1upO-_2hK1ssakuTzqZnPyEkH_h_6UjZmDaWky9yqQEvOw6U7AqpV7Sx-o"/>
+                    <div class="gallery-overlay absolute inset-0 bg-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="font-label-md text-label-md text-primary uppercase tracking-widest bg-surface/90 rounded-full px-4 py-1 mb-2 w-max shadow-sm">Grooming</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface font-semibold drop-shadow-md">Precision Trim</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Tall Portrait - Makeup (Spans 2 rows) -->
+            <div class="gallery-item-hover relative overflow-hidden bg-surface rounded-xl md:row-span-2 aspect-[3/4] md:aspect-auto shadow-md p-2 cursor-pointer fade-in-up">
+                <div class="w-full h-full rounded-lg overflow-hidden relative">
+                    <img alt="Makeup Application" class="w-full h-full object-cover transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDarQU1mIhVt-cLpKXcMCG1ugoNi7D1ZeIpDEHGNVppZS9qEmJl3Qh11GwwOxI0eMC16VQkmB7ZPOEdQ4JiT7er5kILSRc3jd6PXY2SGylBiHGbhPMJJpLI6Dy0wxvfZt4wBgntOTmhuJBsLIAlJLVnhKFTmy4FKQj8-HfkjKVzBs5ZymcCY66hqsy7eFi5ZlLTTroMnqJAi_QEsbcMR4aeFqt7DD7B2e_JJEW5t63MnCOA-hJXB9mmH3oStOySCGO_owcoHZaQV-k"/>
+                    <div class="gallery-overlay absolute inset-0 bg-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="font-label-md text-label-md text-primary uppercase tracking-widest bg-surface/90 rounded-full px-4 py-1 mb-2 w-max shadow-sm">Makeup</span>
+                        <h3 class="font-headline-md text-2xl text-on-surface font-semibold drop-shadow-md">Editorial Glam</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Wide Landscape - Salon Interior (Spans 2 cols) -->
+            <div class="gallery-item-hover relative overflow-hidden bg-surface rounded-xl md:col-span-2 aspect-video md:aspect-auto shadow-md p-2 cursor-pointer fade-in-up" style="transition-delay: 100ms;">
+                <div class="w-full h-full rounded-lg overflow-hidden relative">
+                    <img alt="Salon Interior" class="w-full h-full object-cover transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS42PXji-vf1tIEW6ykhKUx8t7YPM736h6psokaoTurv3U2Cj9ldQaibdy3SbunDxdmzAs6c97kAHb_8FYTbAswzhxTimktWBUn1hNhlfNfDuuuslbAu4ASPEecEeIaGjg5Do0-7o4b9DutcibyqQvEmn6_yRKk6vMUNFHQQgVt9phxGcVu0dOjEDz7BE9RqsGZxmtf_pH3tRBsKXkAJczjNOLaQt1nvffPZIDwQPD3zMsJxLJv-LHTcT3mQZSwVtI2jvgKt8gVao"/>
+                    <div class="gallery-overlay absolute inset-0 bg-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="font-label-md text-label-md text-primary uppercase tracking-widest bg-surface/90 rounded-full px-4 py-1 mb-3 w-max shadow-sm">Atmosphere</span>
+                        <h3 class="font-headline-md text-headline-md text-on-surface font-semibold drop-shadow-md">The VNB Experience</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Action -->
+        <div class="mt-16 flex justify-center fade-in-up">
+            <button id="load-portfolio-btn" class="bg-surface-variant text-primary px-8 py-3 rounded-full uppercase font-label-md text-label-md tracking-widest transition-all duration-300 shadow-md hover:bg-surface-container-high active:scale-95">
+                View Full Portfolio
+            </button>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-on-surface/95 backdrop-blur-md flex flex-col justify-between p-6 opacity-0 transition-opacity duration-300">
+        <div class="flex justify-between items-center w-full max-w-7xl mx-auto py-2">
+            <span id="lightbox-category" class="font-label-md text-label-md text-white bg-primary rounded-full px-4 py-1 shadow-sm uppercase tracking-widest">Category</span>
+            <button id="close-lightbox" class="text-white p-2 hover:bg-surface-variant/20 transition-colors rounded-full focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex items-center justify-between w-full max-w-7xl mx-auto flex-grow gap-4">
+            <button id="prev-lightbox" class="text-white p-3 hover:bg-surface-variant/20 transition-colors rounded-full focus:outline-none active:scale-90">
+                <span class="material-symbols-outlined text-4xl">arrow_back</span>
+            </button>
+            <div class="flex flex-col items-center max-w-4xl max-h-[70vh] flex-grow select-none">
+                <img id="lightbox-img" class="max-w-full max-h-[60vh] object-contain rounded-lg shadow-ambient transition-transform duration-300" src="" alt="Lightbox View">
+                <h3 id="lightbox-title" class="font-headline-md text-2xl text-white mt-6 font-semibold text-center drop-shadow-md">Title</h3>
+            </div>
+            <button id="next-lightbox" class="text-white p-3 hover:bg-surface-variant/20 transition-colors rounded-full focus:outline-none active:scale-90">
+                <span class="material-symbols-outlined text-4xl">arrow_forward</span>
+            </button>
+        </div>
+        <div class="w-full text-center py-2 font-body-md text-xs text-white/50">
+            Use Left/Right arrows to navigate. Press Esc to close.
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full py-16 bg-surface-container-low border-t border-surface-variant shadow-inner">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-4 md:px-8 max-w-7xl mx-auto">
+            <div class="col-span-1 md:col-span-2 mb-8 md:mb-0">
+                <div class="font-display-lg text-headline-md text-on-surface mb-4">VNB VOGUE</div>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    Elevating the standard of unisex luxury grooming and styling.
+                </p>
+            </div>
+            <div class="flex flex-col space-y-4 font-body-md text-body-md text-on-surface-variant">
+                <a class="hover:text-primary transition-all underline opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+                <a class="hover:text-primary transition-all underline opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+            </div>
+            <div class="flex flex-col space-y-4 font-body-md text-body-md text-on-surface-variant">
+                <a class="hover:text-primary transition-all underline opacity-80 hover:opacity-100" href="https://instagram.com/vnb_vogue.blr" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a class="hover:text-primary transition-all underline opacity-80 hover:opacity-100" href="#">Facebook</a>
+                <a class="hover:text-primary transition-all underline opacity-80 hover:opacity-100" href="contact.html">Location</a>
+            </div>
+            <div class="col-span-1 md:col-span-4 mt-12 pt-8 border-t border-surface-variant text-center font-body-md text-sm text-on-surface-variant">
+                © 2024 VNB VOGUE UNISEX SALON. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Optimized Session-based Loading Screen
+            const loadingScreen = document.getElementById('loadingScreen');
+            const isVisited = sessionStorage.getItem('vnb_vogue_visited');
+            
+            if (isVisited) {
+                if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 200);
+                }
+            } else {
+                sessionStorage.setItem('vnb_vogue_visited', 'true');
+                if (loadingScreen) {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 800);
+                    }, 2200);
+                }
+            }
+
+            // Mobile Navigation Toggle
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            const closeBtn = document.getElementById('close-drawer');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+
+            if (toggleBtn && drawer && overlay) {
+                const openDrawer = () => {
+                    drawer.classList.remove('translate-x-full');
+                    overlay.classList.remove('opacity-0', 'pointer-events-none');
+                    overlay.classList.add('opacity-100');
+                    document.body.style.overflow = 'hidden';
+                };
+
+                const closeDrawer = () => {
+                    drawer.classList.add('translate-x-full');
+                    overlay.classList.remove('opacity-100');
+                    overlay.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = '';
+                };
+
+                toggleBtn.addEventListener('click', openDrawer);
+                if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+                overlay.addEventListener('click', closeDrawer);
+            }
+
+            // Scroll Entrance animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 300);
+
+            // Sticky Navigation Scroll Animation
+            const navHeader = document.querySelector('nav');
+            const navInner = navHeader ? navHeader.querySelector('div') : null;
+            if (navHeader) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        navHeader.classList.add('shadow-md');
+                        if (navInner) {
+                            navInner.classList.replace('h-20', 'h-16');
+                        }
+                    } else {
+                        navHeader.classList.remove('shadow-md');
+                        if (navInner) {
+                            navInner.classList.replace('h-16', 'h-20');
+                        }
+                    }
+                });
+            }
+
+            // Lightbox Modal Functionality
+            const galleryItems = document.querySelectorAll('.gallery-item-hover');
+            const lightbox = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCat = document.getElementById('lightbox-category');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const closeLightboxBtn = document.getElementById('close-lightbox');
+            const prevBtn = document.getElementById('prev-lightbox');
+            const nextBtn = document.getElementById('next-lightbox');
+
+            let imagesData = [];
+            let currentIndex = 0;
+
+            // Collect data from gallery grid
+            galleryItems.forEach((item, index) => {
+                const img = item.querySelector('img');
+                const catSpan = item.querySelector('.gallery-overlay span');
+                const titleH3 = item.querySelector('.gallery-overlay h3');
+                
+                imagesData.push({
+                    src: img.src,
+                    alt: img.alt || 'VNB Vogue Gallery Image',
+                    category: catSpan ? catSpan.textContent : 'VNB VOGUE',
+                    title: titleH3 ? titleH3.textContent : 'Artistry'
+                });
+
+                item.addEventListener('click', () => {
+                    currentIndex = index;
+                    openLightbox();
+                });
+            });
+
+            function openLightbox() {
+                updateLightboxContent();
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    lightbox.classList.remove('opacity-0');
+                    lightbox.classList.add('opacity-100');
+                }, 50);
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('opacity-100');
+                lightbox.classList.add('opacity-0');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    lightbox.classList.add('hidden');
+                }, 300);
+            }
+
+            function updateLightboxContent() {
+                const data = imagesData[currentIndex];
+                if (data) {
+                    lightboxImg.style.transform = 'scale(0.95)';
+                    lightboxImg.src = data.src;
+                    lightboxImg.alt = data.alt;
+                    lightboxCat.textContent = data.category;
+                    lightboxTitle.textContent = data.title;
+                    setTimeout(() => {
+                        lightboxImg.style.transform = 'scale(1)';
+                    }, 50);
+                }
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + imagesData.length) % imagesData.length;
+                updateLightboxContent();
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % imagesData.length;
+                updateLightboxContent();
+            }
+
+            if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', closeLightbox);
+            if (prevBtn) prevBtn.addEventListener('click', showPrev);
+            if (nextBtn) nextBtn.addEventListener('click', showNext);
+
+            // Close on overlay background click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.id === 'lightbox-modal' || e.target.parentElement?.id === 'lightbox-modal') {
+                    // check if we clicked on the background
+                    const rect = lightboxImg.getBoundingClientRect();
+                    const clickedImg = (
+                        e.clientX >= rect.left && e.clientX <= rect.right &&
+                        e.clientY >= rect.top && e.clientY <= rect.bottom
+                    );
+                    if (!clickedImg && e.target !== prevBtn && e.target !== nextBtn && !prevBtn.contains(e.target) && !nextBtn.contains(e.target)) {
+                        closeLightbox();
+                    }
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('hidden')) {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowLeft') showPrev();
+                    if (e.key === 'ArrowRight') showNext();
+                }
+            });
+
+            // Load Portfolio button dynamic interaction
+            const loadBtn = document.getElementById('load-portfolio-btn');
+            if (loadBtn) {
+                loadBtn.addEventListener('click', () => {
+                    const originalText = loadBtn.textContent;
+                    loadBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm mr-2 align-middle">sync</span>Loading...';
+                    setTimeout(() => {
+                        loadBtn.textContent = 'Portfolio Fully Loaded';
+                        loadBtn.disabled = true;
+                        loadBtn.classList.replace('hover:bg-surface-container-high', 'opacity-60');
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
