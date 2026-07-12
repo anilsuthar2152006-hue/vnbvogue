@@ -258,6 +258,13 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-sans antialiased selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="fixed inset-0 bg-surface flex flex-col items-center justify-center transition-opacity duration-500 pointer-events-auto opacity-100" style="z-index: 9999;">
+        <div class="text-primary font-display-lg text-headline-lg tracking-[0.2em] transition-all duration-500 transform scale-95 opacity-0" id="transition-logo">
+            VNB VOGUE
+        </div>
+    </div>
+
     <!-- Top Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-surface-variant transition-all duration-300 ease-in-out">
         <div class="flex justify-between items-center h-20 px-4 md:px-8 max-w-7xl mx-auto transition-all duration-300 ease-in-out">
@@ -489,6 +496,48 @@
     <!-- Interactive Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Page Transition Animation Logic
+            const transOverlay = document.getElementById('page-transition-overlay');
+            const transLogo = document.getElementById('transition-logo');
+            
+            if (transLogo) {
+                setTimeout(() => {
+                    transLogo.classList.remove('scale-95', 'opacity-0');
+                    transLogo.classList.add('scale-100', 'opacity-100');
+                }, 100);
+            }
+            
+            if (transOverlay) {
+                setTimeout(() => {
+                    transOverlay.style.opacity = '0';
+                    transOverlay.style.pointerEvents = 'none';
+                }, 800);
+            }
+            
+            const localLinks = document.querySelectorAll('a[href$=".html"]');
+            localLinks.forEach(link => {
+                if (link.hostname === window.location.hostname && !link.hasAttribute('target') && !link.href.includes('#')) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetUrl = link.href;
+                        
+                        if (transOverlay) {
+                            transOverlay.style.pointerEvents = 'auto';
+                            transOverlay.style.opacity = '1';
+                            if (transLogo) {
+                                transLogo.classList.remove('scale-100', 'opacity-100');
+                                transLogo.classList.add('scale-95', 'opacity-0');
+                            }
+                            setTimeout(() => {
+                                window.location.href = targetUrl;
+                            }, 500);
+                        } else {
+                            window.location.href = targetUrl;
+                        }
+                    });
+                }
+            });
+
             // Mobile Navigation Toggle
             const toggleBtn = document.getElementById('mobile-menu-toggle');
             const closeBtn = document.getElementById('close-drawer');

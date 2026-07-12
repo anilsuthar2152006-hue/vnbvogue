@@ -247,13 +247,10 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col pt-20">
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="text-primary font-headline-md">
-            <span class="material-symbols-outlined" style="font-size: 24px;">lens</span>
-        </div>
-        <div class="loading-bar-container">
-            <div class="loading-bar"></div>
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="fixed inset-0 bg-surface flex flex-col items-center justify-center transition-opacity duration-500 pointer-events-auto opacity-100" style="z-index: 9999;">
+        <div class="text-primary font-display-lg text-headline-lg tracking-[0.2em] transition-all duration-500 transform scale-95 opacity-0" id="transition-logo">
+            VNB VOGUE
         </div>
     </div>
 
@@ -429,28 +426,47 @@
     <!-- Interactive Scripts -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Optimized Session-based Loading Screen
-            const loadingScreen = document.getElementById('loadingScreen');
-            const isVisited = sessionStorage.getItem('vnb_vogue_visited');
+            // Page Transition Animation Logic
+            const transOverlay = document.getElementById('page-transition-overlay');
+            const transLogo = document.getElementById('transition-logo');
             
-            if (isVisited) {
-                if (loadingScreen) {
-                    loadingScreen.style.opacity = '0';
-                    setTimeout(() => {
-                        loadingScreen.style.display = 'none';
-                    }, 200);
-                }
-            } else {
-                sessionStorage.setItem('vnb_vogue_visited', 'true');
-                if (loadingScreen) {
-                    setTimeout(() => {
-                        loadingScreen.style.opacity = '0';
-                        setTimeout(() => {
-                            loadingScreen.style.display = 'none';
-                        }, 800);
-                    }, 2200);
-                }
+            if (transLogo) {
+                setTimeout(() => {
+                    transLogo.classList.remove('scale-95', 'opacity-0');
+                    transLogo.classList.add('scale-100', 'opacity-100');
+                }, 100);
             }
+            
+            if (transOverlay) {
+                setTimeout(() => {
+                    transOverlay.style.opacity = '0';
+                    transOverlay.style.pointerEvents = 'none';
+                }, 800);
+            }
+            
+            const localLinks = document.querySelectorAll('a[href$=".html"]');
+            localLinks.forEach(link => {
+                if (link.hostname === window.location.hostname && !link.hasAttribute('target') && !link.href.includes('#')) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetUrl = link.href;
+                        
+                        if (transOverlay) {
+                            transOverlay.style.pointerEvents = 'auto';
+                            transOverlay.style.opacity = '1';
+                            if (transLogo) {
+                                transLogo.classList.remove('scale-100', 'opacity-100');
+                                transLogo.classList.add('scale-95', 'opacity-0');
+                            }
+                            setTimeout(() => {
+                                window.location.href = targetUrl;
+                            }, 500);
+                        } else {
+                            window.location.href = targetUrl;
+                        }
+                    });
+                }
+            });
 
             // Mobile Navigation Toggle
             const toggleBtn = document.getElementById('mobile-menu-toggle');
