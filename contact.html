@@ -254,7 +254,7 @@
                 <li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">Meet the Team</a></li>
             </ul>
             <!-- Trailing Action -->
-            <a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-surface text-primary font-label-md text-label-md uppercase tracking-widest rounded-full shadow-soft-extruded hover:shadow-soft-hover active:shadow-soft-pressed transition-all duration-300 text-center" href="book-appointment.html">
+            <a href="book-appointment.html" class="hidden md:block bg-primary text-on-primary shadow-sm px-6 py-3 font-label-md text-label-md uppercase rounded-full hover:bg-primary/90 transition-all text-center">
                 Book Appointment
             </a>
             <!-- Mobile Menu Toggle -->
@@ -424,10 +424,11 @@
             </div>
             <h3 class="font-headline-md text-headline-md text-primary uppercase">Thank You</h3>
             <p id="success-modal-message" class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                Your message has been successfully sent. We will get back to you shortly.
+                Your message is ready. Click the button below to instantly send your inquiry details via WhatsApp.
             </p>
-            <button id="close-success-modal" class="px-8 py-3 bg-surface text-primary font-label-md text-label-md uppercase tracking-widest rounded-full shadow-soft-extruded hover:shadow-soft-hover active:shadow-soft-pressed transition-all duration-300 w-full mt-4">
-                Close
+            <button id="close-success-modal" class="px-8 py-3 bg-surface text-primary font-label-md text-label-md uppercase tracking-widest rounded-full shadow-soft-extruded hover:shadow-soft-hover active:shadow-soft-pressed transition-all duration-300 w-full mt-4 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5 fill-current text-primary" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.335 4.97L2 22l5.233-1.371a9.94 9.94 0 004.773 1.21h.005c5.502 0 9.987-4.478 9.989-9.985A9.984 9.984 0 0012.012 2zm4.721 13.916c-.26.732-1.503 1.34-2.072 1.425-.561.084-1.127.147-3.664-.853-3.243-1.282-5.32-4.57-5.48-4.786-.16-.215-1.29-1.713-1.29-3.268 0-1.555.801-2.32 1.082-2.603.28-.282.61-.353.812-.353h.581c.183 0 .428-.07.671.517.26.623.882 2.146.958 2.302.076.155.127.338.026.541-.102.203-.153.328-.305.508-.152.18-.32.401-.457.538-.153.153-.312.32-.135.624.177.303.785 1.293 1.684 2.091.139.124.263.23.376.32 1.157 1.026 2.023 1.31 2.307 1.45.283.14.45.119.619-.071.17-.19.728-.846.922-1.136.195-.29.39-.241.656-.142.266.099 1.689.794 1.979.939.29.145.483.218.553.339.07.12.07.7-.19 1.433z"/></svg>
+                Send via WhatsApp
             </button>
         </div>
     </div>
@@ -551,6 +552,11 @@
             const emailError = document.getElementById('email-error');
             const messageError = document.getElementById('message-error');
 
+            // Captured data for WhatsApp redirect
+            let savedName = "";
+            let savedEmail = "";
+            let savedMessage = "";
+
             function validateEmail(email) {
                 const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
                 return re.test(String(email).toLowerCase());
@@ -602,6 +608,11 @@
                     return;
                 }
 
+                // Save data before form reset
+                savedName = nameInput.value.trim();
+                savedEmail = emailInput.value.trim();
+                savedMessage = messageInput.value.trim();
+
                 // Submit animation
                 const originalText = submitText.textContent;
                 const originalIcon = submitIcon.textContent;
@@ -627,17 +638,32 @@
                     submitIcon.classList.remove('animate-spin');
                     submitBtn.classList.replace('shadow-soft-pressed', 'shadow-soft-extruded');
                     submitBtn.disabled = false;
-                    form.reset();
                 }, 1500);
             });
 
             if (closeSuccessModalBtn) {
                 closeSuccessModalBtn.addEventListener('click', () => {
+                    // Construct WhatsApp message
+                    const waMessage = `🌸 *VNB VOGUE INQUIRY* 🌸\n\n` +
+                                      `Hello VNB Vogue, I would like to send an inquiry from the Contact Us page:\n\n` +
+                                      `👤 *Name:* ${savedName}\n` +
+                                      `📧 *Email:* ${savedEmail}\n` +
+                                      `💬 *Message:* ${savedMessage}\n\n` +
+                                      `Thank you!`;
+                    
+                    const waUrl = `https://wa.me/917338087816?text=${encodeURIComponent(waMessage)}`;
+                    
+                    // Open WhatsApp in a new tab
+                    window.open(waUrl, '_blank');
+
+                    // Close success modal & reset form
                     successModal.classList.remove('opacity-100');
                     successModal.classList.add('opacity-0');
                     setTimeout(() => {
                         successModal.classList.remove('flex');
                         successModal.classList.add('hidden');
+                        form.reset();
+                        window.location.href = 'index.html';
                     }, 300);
                 });
             }
