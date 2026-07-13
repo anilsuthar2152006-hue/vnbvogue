@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>VNB VOGUE UNISEX SALON - Luxury Beauty &amp; Grooming</title>
+    <title>VNB VOGUE UNISEX SALON - Luxury Beauty &amp; Grooming | New Delhi</title>
+    <meta name="description" content="VNB Vogue Unisex Salon — Bespoke hair, makeup, nail & skin treatments. Located in Mahavir Enclave, New Delhi. Book your appointment today."/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -105,8 +106,8 @@
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
         body {
-            background-color: theme('colors.surface');
-            color: theme('colors.on-surface');
+            background-color: #fff8f5;
+            color: #1e1b18;
             overflow-x: hidden;
         }
         .fade-in-up {
@@ -118,7 +119,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Navigation Entrance Animation */
         nav {
             transform: translateY(-100%);
             animation: navbarSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -126,7 +126,6 @@
         @keyframes navbarSlideDown {
             to { transform: translateY(0); }
         }
-        /* Luxury Navigation Hover Underline Animation */
         .nav-link-custom {
             position: relative;
             display: inline-block;
@@ -138,7 +137,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: theme('colors.primary');
+            background-color: #410002;
             transform: scaleX(0);
             transform-origin: bottom right;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -146,6 +145,56 @@
         .nav-link-custom:hover::after {
             transform: scaleX(1);
             transform-origin: bottom left;
+        }
+        /* Hero Slideshow */
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .hero-dots button.active {
+            background-color: #410002;
+            transform: scale(1.2);
+        }
+        /* Service card images */
+        .service-img-wrap {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        .service-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .service-card:hover .service-img-wrap img {
+            transform: scale(1.05);
+        }
+        /* WhatsApp float button */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .wa-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37,211,102,0.6);
         }
     </style>
 </head>
@@ -156,6 +205,11 @@
             VNB VOGUE
         </div>
     </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://api.whatsapp.com/send/?phone=918595748132&text=Hello%20VNB%20Vogue%2C%20I%20would%20like%20to%20book%20an%20appointment&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
 
     <!-- TopNavBar -->
     <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-surface-variant transition-all duration-300 ease-in-out">
@@ -206,36 +260,83 @@
     <div id="drawer-overlay" class="fixed inset-0 z-40 bg-on-surface/20 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
     <main class="pt-[80px] flex-grow">
-        <!-- Hero Section -->
-        <section class="relative min-h-[921px] flex items-center justify-center px-margin-mobile md:px-margin-desktop">
-            <div class="absolute inset-0 z-0">
-                <img class="w-full h-full object-cover opacity-60" loading="lazy" alt="VNB Vogue Luxury Salon Interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtmWfGYJ15O5vH8hiNkrewY5nJZ1bPGn_D8fsVJcw-mgjekAFkkxiMpAeztuAhaLHPrXZzT_FvypEp0NEDMHgM-71L80SD09fHrVSDpAQnbglEGsrLpZt-gv-2F4gGloz6ullcJoiV7_HYjKq07QnA6bjlaw6VnzCLgjc7GQQRUprh6rxWLaWUrRJUSuh6Obyujow8PsMvNqWl3zE69liOxBX6_vZ5zYoGj8TvTgojk09FyuXz-LriRwiz4ae45xJqR2MPV6m2oXM"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+        <!-- ===== Hero Section with Slideshow ===== -->
+        <section class="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
+            <!-- Slides -->
+            <div id="hero-slides" class="absolute inset-0 z-0">
+                <div class="hero-slide active">
+                    <img class="w-full h-full object-cover" src="http://raunisexsalon.in/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-4.22.57-PM.jpeg" alt="VNB Vogue Salon — Premium Hair Styling" loading="eager"/>
+                </div>
+                <div class="hero-slide">
+                    <img class="w-full h-full object-cover" src="http://raunisexsalon.in/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-5.05.06-PM.jpeg" alt="VNB Vogue — Expert Makeup Artists" loading="lazy"/>
+                </div>
+                <div class="hero-slide">
+                    <img class="w-full h-full object-cover" src="http://raunisexsalon.in/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-5.06.12-PM.jpeg" alt="VNB Vogue — Luxurious Nail Services" loading="lazy"/>
+                </div>
+                <div class="hero-slide">
+                    <img class="w-full h-full object-cover" src="http://raunisexsalon.in/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-5.07.47-PM.jpeg" alt="VNB Vogue — Bridal & Special Occasion" loading="lazy"/>
+                </div>
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-transparent"></div>
             </div>
-            <div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center gap-8 mt-20 fade-in-up">
-                <h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary">
-                    Redefining Modern Beauty &amp; Grooming
+
+            <!-- Hero Content -->
+            <div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center gap-8 mt-20 px-margin-mobile md:px-margin-desktop fade-in-up">
+                <span class="font-label-md text-label-md text-primary tracking-widest uppercase bg-primary/10 px-4 py-2 rounded-full border border-primary/20">New Delhi's Premier Unisex Salon</span>
+                <h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface">
+                    Your Crown Deserves <span class="text-primary">World-Class Care</span>
                 </h1>
                 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-                    Premium Hair, Beauty &amp; Nail Studio. Experience the epitome of luxury grooming in an environment designed for ultimate relaxation and refined style.
+                    Bespoke colour services, beautiful hairdressing & transformative beauty treatments. Experience the art of elegance at VNB VOGUE.
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="book-appointment.html" class="bg-primary-container text-white px-10 py-4 rounded-full font-label-md text-label-md hover:bg-primary transition-all shadow-ambient hover:scale-105 text-center inline-block">
-                        Book Appointment
+                    <a href="https://api.whatsapp.com/send/?phone=918595748132&text=Hello%20VNB%20Vogue%2C%20I%20would%20like%20to%20book%20an%20appointment&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="bg-primary-container text-white px-10 py-4 rounded-full font-label-md text-label-md hover:bg-primary transition-all shadow-ambient hover:scale-105 text-center inline-flex items-center gap-2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Book on WhatsApp
                     </a>
                     <a href="services.html" class="border border-primary text-primary px-10 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container transition-colors text-center inline-block">
                         Our Services
                     </a>
                 </div>
             </div>
+
+            <!-- Slide Dots -->
+            <div class="hero-dots absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-3">
+                <button data-slide="0" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300 active" aria-label="Slide 1"></button>
+                <button data-slide="1" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300" aria-label="Slide 2"></button>
+                <button data-slide="2" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300" aria-label="Slide 3"></button>
+                <button data-slide="3" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300" aria-label="Slide 4"></button>
+            </div>
         </section>
 
-        <!-- About Teaser -->
+        <!-- ===== Stats Bar ===== -->
+        <section class="bg-primary text-on-primary py-8 px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-max-width mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="font-display-lg text-3xl font-bold">10+</div>
+                    <div class="font-label-md text-label-md uppercase tracking-widest mt-1 opacity-80">Years of Excellence</div>
+                </div>
+                <div>
+                    <div class="font-display-lg text-3xl font-bold">7</div>
+                    <div class="font-label-md text-label-md uppercase tracking-widest mt-1 opacity-80">Service Categories</div>
+                </div>
+                <div>
+                    <div class="font-display-lg text-3xl font-bold">500+</div>
+                    <div class="font-label-md text-label-md uppercase tracking-widest mt-1 opacity-80">Happy Clients</div>
+                </div>
+                <div>
+                    <div class="font-display-lg text-3xl font-bold">Mon–Sun</div>
+                    <div class="font-label-md text-label-md uppercase tracking-widest mt-1 opacity-80">9 AM – 9 PM</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== About Teaser ===== -->
         <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden">
             <div class="max-w-max-width mx-auto grid md:grid-cols-2 gap-16 items-center">
                 <div class="order-2 md:order-1 relative fade-in-up">
                     <div class="aspect-[4/5] rounded-t-full overflow-hidden shadow-ambient relative z-10 bg-surface-container">
-                        <img class="w-full h-full object-cover" loading="lazy" alt="Hairstylist styling a client at VNB Vogue salon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNcqEgxohTW3DerPp7SgSkajunyvRKhJxROoL-yUa7WMnwlnkY5XvHpRXdslYm-gMNT_sXC6F19grOVlgQPx698SnrVVVxa09jdOeyRDAS-989_eVu_5N2vIuryLNn0NoE6zrjL6NM_J_Rb4bmfNrj_mTW1egjGpQQ01oFfpRQ5Bp4aB1KYmtMjP74b1J0703kk8l91n63yRs5ItBBZMsw2UIPmJaqKtqo9uiTW4gBZkwt5J3sPm_Qc0ViQ-XtWFlpXnOCa4HfGiQ"/>
+                        <img class="w-full h-full object-cover" loading="lazy" alt="VNB Vogue Salon Interior — Luxury & Style" src="https://raunisexsalon.in/wp-content/uploads/2025/09/926-min.jpg"/>
                     </div>
                     <div class="absolute -bottom-8 -left-8 w-64 h-64 bg-surface-variant rounded-full -z-0"></div>
                 </div>
@@ -243,87 +344,232 @@
                     <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Our Story</span>
                     <h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary">A Sanctuary of Refined Artistry</h2>
                     <p class="font-body-md text-body-md text-on-surface-variant">
-                        At VNB VOGUE, we believe beauty is an art form deserving of a meticulous canvas. Founded on the principles of timeless elegance and modern technique, our studio offers a curated experience that transcends the ordinary salon visit. We blend premium products with unparalleled expertise to elevate your personal style in a space designed for tranquility.
+                        At VNB VOGUE, we believe your hair is your crown — and it deserves world-class care. Founded on the principles of timeless elegance and modern technique, our salon offers bespoke colour services, beautiful hairdressing, transformative makeup, and meticulous nail artistry in an environment crafted for total relaxation.
                     </p>
-                    <a class="font-label-md text-label-md text-primary border-b border-primary self-start mt-4 pb-1 hover:text-primary-container transition-colors" href="about.html">Discover Our Journey</a>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Located in Mahavir Enclave, New Delhi, we bring premium beauty expertise to every client — from everyday styling to grand bridal moments.
+                    </p>
+                    <div class="flex gap-6 pt-2">
+                        <a class="font-label-md text-label-md text-primary border-b border-primary self-start pb-1 hover:text-primary-container transition-colors" href="about.html">Discover Our Journey</a>
+                        <a class="font-label-md text-label-md text-on-surface-variant border-b border-outline self-start pb-1 hover:text-primary transition-colors" href="team.html">Meet the Team</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Highlight -->
+        <!-- ===== Services Highlight ===== -->
         <section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface">
             <div class="max-w-max-width mx-auto flex flex-col gap-16">
                 <div class="text-center flex flex-col gap-4 fade-in-up">
+                    <span class="font-label-md text-label-md text-primary tracking-widest uppercase">What We Offer</span>
                     <h2 class="font-headline-md text-headline-lg-mobile md:text-headline-lg text-primary">Curated Experiences</h2>
                     <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Tailored treatments designed to enhance your natural beauty and provide profound relaxation.</p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div onclick="window.location.href='services.html#hair'" class="bg-surface-container-lowest p-8 shadow-ambient flex flex-col gap-6 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up">
-                        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
-                            <span class="material-symbols-outlined" style="font-size: 32px;">content_cut</span>
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Hair -->
+                    <div onclick="window.location.href='services.html#hair'" class="service-card bg-surface-container-lowest shadow-ambient flex flex-col gap-0 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up overflow-hidden rounded-xl">
+                        <div class="service-img-wrap">
+                            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/1.png" alt="Hair Services" loading="lazy"/>
                         </div>
-                        <h3 class="font-headline-md text-headline-md text-primary">Hair Artistry</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant flex-grow">Bespoke cutting, coloring, and styling tailored to your unique features and lifestyle.</p>
-                        <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#hair">
-                            Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                        <div class="p-6 flex flex-col gap-3">
+                            <h3 class="font-headline-md text-xl text-primary">Hair Artistry</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant flex-grow text-sm">Cuts, styling, colouring, smoothening & keratin treatments for all hair types.</p>
+                            <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#hair">
+                                Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Makeup -->
+                    <div onclick="window.location.href='services.html#makeup'" class="service-card bg-surface-container-lowest shadow-ambient flex flex-col gap-0 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up overflow-hidden rounded-xl md:-translate-y-4" style="transition-delay: 50ms;">
+                        <div class="service-img-wrap">
+                            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/3.png" alt="Makeup Services" loading="lazy"/>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3">
+                            <h3 class="font-headline-md text-xl text-primary">Makeup</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant flex-grow text-sm">Professional makeup for every occasion — from daily glam to grand events.</p>
+                            <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#makeup">
+                                Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Nail -->
+                    <div onclick="window.location.href='services.html#nail'" class="service-card bg-surface-container-lowest shadow-ambient flex flex-col gap-0 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up overflow-hidden rounded-xl" style="transition-delay: 100ms;">
+                        <div class="service-img-wrap">
+                            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/6.png" alt="Nail Services" loading="lazy"/>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3">
+                            <h3 class="font-headline-md text-xl text-primary">Nail Studio</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant flex-grow text-sm">Manicures, pedicures, and nail art extensions with premium finishes.</p>
+                            <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#nail">
+                                Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Skin -->
+                    <div onclick="window.location.href='services.html#skin'" class="service-card bg-surface-container-lowest shadow-ambient flex flex-col gap-0 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up overflow-hidden rounded-xl md:-translate-y-4" style="transition-delay: 150ms;">
+                        <div class="service-img-wrap">
+                            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/1-1.png" alt="Skin Treatment" loading="lazy"/>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3">
+                            <h3 class="font-headline-md text-xl text-primary">Skin Treatment</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant flex-grow text-sm">Advanced facials, hydro-facial & D-Tan treatments to restore your natural glow.</p>
+                            <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#skin">
+                                Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Airbrush -->
+                    <div onclick="window.location.href='services.html#airbrush'" class="service-card bg-surface-container-lowest shadow-ambient flex flex-col gap-0 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up overflow-hidden rounded-xl" style="transition-delay: 200ms;">
+                        <div class="service-img-wrap">
+                            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/1-3.png" alt="Air Brush Makeup" loading="lazy"/>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3">
+                            <h3 class="font-headline-md text-xl text-primary">Air Brush Makeup</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant flex-grow text-sm">Flawless, lightweight, long-lasting airbrush finish for every skin tone.</p>
+                            <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#airbrush">
+                                Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- HD Makeup -->
+                    <div onclick="window.location.href='services.html#hdmakeup'" class="service-card bg-surface-container-lowest shadow-ambient flex flex-col gap-0 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up overflow-hidden rounded-xl md:-translate-y-4" style="transition-delay: 250ms;">
+                        <div class="service-img-wrap">
+                            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/2-3.png" alt="HD Makeup" loading="lazy"/>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3">
+                            <h3 class="font-headline-md text-xl text-primary">HD Makeup</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant flex-grow text-sm">High-definition, photo-ready makeup with seamless, camera-perfect blending.</p>
+                            <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#hdmakeup">
+                                Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Bridal -->
+                    <div onclick="window.location.href='services.html#bridal'" class="service-card bg-surface-container-lowest shadow-ambient flex flex-col gap-0 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up overflow-hidden rounded-xl md:col-span-1" style="transition-delay: 300ms;">
+                        <div class="service-img-wrap">
+                            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/Untitled-design-14.png" alt="Bridal Makeup" loading="lazy"/>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3">
+                            <h3 class="font-headline-md text-xl text-primary">Bridal Makeup</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant flex-grow text-sm">Customised bridal packages — makeup, hair styling & saree draping for your perfect day.</p>
+                            <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#bridal">
+                                Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- CTA Card -->
+                    <div class="bg-primary text-on-primary p-8 shadow-ambient flex flex-col gap-4 justify-center items-start cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up rounded-xl md:-translate-y-4" style="transition-delay: 350ms;" onclick="window.location.href='services.html'">
+                        <h3 class="font-headline-md text-xl">View All Services</h3>
+                        <p class="font-body-md text-sm opacity-80">Explore our complete menu with pricing.</p>
+                        <a href="services.html" class="font-label-md text-label-md flex items-center gap-2 underline underline-offset-4">
+                            See Pricing <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
                         </a>
                     </div>
-                    <!-- Service 2 -->
-                    <div onclick="window.location.href='services.html#beauty'" class="bg-surface-container-lowest p-8 shadow-ambient flex flex-col gap-6 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 md:-translate-y-8 fade-in-up" style="transition-delay: 100ms;">
-                        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
-                            <span class="material-symbols-outlined" style="font-size: 32px;">spa</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== YouTube Video Section ===== -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop" style="background-image: url('https://raunisexsalon.in/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-5.08.38-PM.jpeg'); background-size: cover; background-position: center; position: relative;">
+            <div class="absolute inset-0 bg-on-surface/80"></div>
+            <div class="relative z-10 max-w-max-width mx-auto flex flex-col items-center gap-10 text-center">
+                <div class="fade-in-up">
+                    <span class="font-label-md text-label-md text-primary-fixed tracking-widest uppercase">Watch Us Work</span>
+                    <h2 class="font-headline-md text-headline-lg-mobile md:text-headline-lg text-white mt-3">See the Magic Happen</h2>
+                    <p class="font-body-md text-body-md text-white/70 max-w-xl mx-auto mt-4">Watch our talented team transform clients with precision, passion, and artistry.</p>
+                </div>
+                <div class="w-full max-w-4xl aspect-video rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] fade-in-up">
+                    <iframe
+                        class="w-full h-full"
+                        src="https://www.youtube-nocookie.com/embed/1IFPTZDL9kY?rel=0&modestbranding=1"
+                        title="VNB Vogue — Salon Experience"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <a href="gallery.html" class="font-label-md text-label-md text-white border border-white/40 px-8 py-3 rounded-full hover:bg-white/10 transition-colors fade-in-up">
+                    View Full Gallery
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== Gift Card / CTA Banner ===== -->
+        <section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+            <div class="max-w-max-width mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center bg-surface p-10 md:p-16 rounded-2xl shadow-ambient fade-in-up">
+                    <div class="flex flex-col gap-6">
+                        <span class="font-label-md text-label-md text-primary tracking-widest uppercase">Ready for a Transformation?</span>
+                        <h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary">Book Your Appointment Today</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Visit us at R.Z.G-27 Mandir Marg, Mahavir Enclave, New Delhi or call us to schedule your visit. Open 7 days a week, 9 AM – 9 PM.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                            <a href="https://api.whatsapp.com/send/?phone=918595748132&text=Hello%20VNB%20Vogue%2C%20I%20would%20like%20to%20book%20an%20appointment&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-8 py-4 rounded-full font-label-md text-label-md uppercase tracking-widest text-center hover:bg-primary-container transition-all shadow-md">
+                                Book on WhatsApp
+                            </a>
+                            <a href="tel:8595748132" class="border border-primary text-primary px-8 py-4 rounded-full font-label-md text-label-md uppercase tracking-widest text-center hover:bg-surface-container transition-colors">
+                                Call Us Now
+                            </a>
                         </div>
-                        <h3 class="font-headline-md text-headline-md text-primary">Advanced Esthetics</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant flex-grow">Rejuvenating skincare treatments using premium formulations to restore your natural glow.</p>
-                        <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#beauty">
-                            Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
-                        </a>
                     </div>
-                    <!-- Service 3 -->
-                    <div onclick="window.location.href='services.html#beauty'" class="bg-surface-container-lowest p-8 shadow-ambient flex flex-col gap-6 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 fade-in-up" style="transition-delay: 200ms;">
-                        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">
-                            <span class="material-symbols-outlined" style="font-size: 32px;">brush</span>
-                        </div>
-                        <h3 class="font-headline-md text-headline-md text-primary">Nail Studio</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant flex-grow">Meticulous manicures and pedicures focusing on nail health and elegant finishes.</p>
-                        <a class="font-label-md text-label-md text-primary flex items-center gap-2 group-hover:text-primary-container transition-colors" href="services.html#beauty">
-                            Explore <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
-                        </a>
+                    <div class="flex justify-center">
+                        <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/giftcard-min.png" alt="VNB Vogue Gift Card" class="max-w-xs w-full rounded-xl shadow-ambient hover:scale-105 transition-transform duration-500" loading="lazy"/>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- ===== Footer ===== -->
     <footer class="w-full py-16 bg-surface shadow-[inset_0_4px_6px_rgba(233,225,220,0.5)] mt-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
-            <!-- Brand & Copyright -->
-            <div class="col-span-1 md:col-span-2 space-y-4">
-                <div class="font-headline-md text-headline-md text-primary uppercase">
-                    VNB VOGUE
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2 space-y-4">
+                    <div class="font-headline-md text-headline-md text-primary uppercase">VNB VOGUE</div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Your Crown Deserves World-Class Care.</p>
+                    <div class="space-y-2 pt-2">
+                        <p class="font-body-md text-body-md text-on-surface-variant flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">location_on</span>
+                            R.Z.G-27 Mandir Marg, Mahavir Enclave, Opp. Pandey Book Depot, Main Palam Dabri Road, New Delhi - 110045
+                        </p>
+                        <a href="tel:8595748132" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">call</span>
+                            8595748132 / 9811748132
+                        </a>
+                        <a href="mailto:support@raunisexsalon.in" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">mail</span>
+                            support@raunisexsalon.in
+                        </a>
+                        <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">schedule</span>
+                            Mon – Sun: 9:00 AM – 9:00 PM
+                        </p>
+                    </div>
                 </div>
-                <p class="font-body-md text-body-md text-on-surface-variant">
-                    © 2024 VNB VOGUE UNISEX SALON. ALL RIGHTS RESERVED.
-                </p>
+                <div class="space-y-4">
+                    <h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Navigate</h4>
+                    <ul class="space-y-3">
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="index.html">Home</a></li>
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="services.html">Services</a></li>
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="gallery.html">Gallery</a></li>
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="about.html">About Us</a></li>
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Follow Us</h4>
+                    <ul class="space-y-3">
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center gap-2" href="https://www.instagram.com/raunisexsalon8?utm_source=qr&igsh=cXdnNGZrY2R2M2tp" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm">photo_camera</span><span>Instagram</span></a></li>
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center gap-2" href="https://www.facebook.com/share/1FH3YnHvCa/" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg><span>Facebook</span></a></li>
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center gap-2" href="https://share.google/Qmv9GRWm98gAZZKzu" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg><span>YouTube</span></a></li>
+                        <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center gap-2" href="https://api.whatsapp.com/send/?phone=918595748132&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- Links Column 1 -->
-            <div class="space-y-4">
-                <h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Legal</h4>
-                <ul class="space-y-3">
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <!-- Links Column 2 -->
-            <div class="space-y-4">
-                <h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Social</h4>
-                <ul class="space-y-3">
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center space-x-2" href="https://instagram.com/vnb_vogue.blr" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-sm">photo_camera</span><span>Instagram</span></a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center space-x-2" href="#"><svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg><span>Facebook</span></a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all flex items-center space-x-2" href="contact.html"><span class="material-symbols-outlined text-sm">map</span><span>Location</span></a></li>
-                </ul>
+            <div class="border-t border-outline-variant/30 pt-8 text-center">
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2025 VNB VOGUE UNISEX SALON. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
@@ -334,28 +580,24 @@
             // Page Transition Animation Logic
             const transOverlay = document.getElementById('page-transition-overlay');
             const transLogo = document.getElementById('transition-logo');
-            
             if (transLogo) {
                 setTimeout(() => {
                     transLogo.classList.remove('scale-95', 'opacity-0');
                     transLogo.classList.add('scale-100', 'opacity-100');
                 }, 100);
             }
-            
             if (transOverlay) {
                 setTimeout(() => {
                     transOverlay.style.opacity = '0';
                     transOverlay.style.pointerEvents = 'none';
                 }, 800);
             }
-            
             const localLinks = document.querySelectorAll('a[href$=".html"]');
             localLinks.forEach(link => {
                 if (link.hostname === window.location.hostname && !link.hasAttribute('target') && !link.href.includes('#')) {
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
                         const targetUrl = link.href;
-                        
                         if (transOverlay) {
                             transOverlay.style.pointerEvents = 'auto';
                             transOverlay.style.opacity = '1';
@@ -363,9 +605,7 @@
                                 transLogo.classList.remove('scale-100', 'opacity-100');
                                 transLogo.classList.add('scale-95', 'opacity-0');
                             }
-                            setTimeout(() => {
-                                window.location.href = targetUrl;
-                            }, 500);
+                            setTimeout(() => { window.location.href = targetUrl; }, 500);
                         } else {
                             window.location.href = targetUrl;
                         }
@@ -373,12 +613,11 @@
                 }
             });
 
-            // Mobile navigation menu toggle drawer logic
+            // Mobile drawer
             const toggleBtn = document.getElementById('mobile-menu-toggle');
             const closeBtn = document.getElementById('close-drawer');
             const drawer = document.getElementById('mobile-drawer');
             const overlay = document.getElementById('drawer-overlay');
-
             if (toggleBtn && drawer && overlay) {
                 const openDrawer = () => {
                     drawer.classList.remove('translate-x-full');
@@ -386,59 +625,73 @@
                     overlay.classList.add('opacity-100');
                     document.body.style.overflow = 'hidden';
                 };
-
                 const closeDrawer = () => {
                     drawer.classList.add('translate-x-full');
                     overlay.classList.remove('opacity-100');
                     overlay.classList.add('opacity-0', 'pointer-events-none');
                     document.body.style.overflow = '';
                 };
-
                 toggleBtn.addEventListener('click', openDrawer);
                 if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
                 overlay.addEventListener('click', closeDrawer);
             }
 
-            // Scroll Entrance animations observer
+            // Scroll observer
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-            document.querySelectorAll('.fade-in-up').forEach((el) => {
-                observer.observe(el);
-            });
-            // Initial call to catch elements in view
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
             setTimeout(() => {
-                document.querySelectorAll('.fade-in-up').forEach((el) => {
+                document.querySelectorAll('.fade-in-up').forEach(el => {
                     const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight) {
-                        el.classList.add('visible');
-                    }
+                    if (rect.top < window.innerHeight) el.classList.add('visible');
                 });
             }, 100);
 
-            // Sticky Navigation Scroll Animation
+            // Sticky nav scroll
             const navHeader = document.querySelector('nav');
             const navInner = navHeader ? navHeader.querySelector('div') : null;
             if (navHeader) {
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 20) {
                         navHeader.classList.add('shadow-md');
-                        if (navInner) {
-                            navInner.classList.replace('h-20', 'h-16');
-                        }
+                        if (navInner) navInner.classList.replace('h-20', 'h-16');
                     } else {
                         navHeader.classList.remove('shadow-md');
-                        if (navInner) {
-                            navInner.classList.replace('h-16', 'h-20');
-                        }
+                        if (navInner) navInner.classList.replace('h-16', 'h-20');
                     }
                 });
             }
+
+            // Hero Slideshow
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dots button');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function goToSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+
+            function startSlideshow() {
+                slideInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+            }
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    goToSlide(i);
+                    startSlideshow();
+                });
+            });
+
+            startSlideshow();
         });
     </script>
 </body>
