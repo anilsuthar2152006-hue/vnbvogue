@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Book an Appointment - VNB VOGUE</title>
+    <title>Book an Appointment - R&A Unisex Salon</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -166,15 +166,19 @@
 <body class="antialiased selection:bg-primary-container selection:text-white flex flex-col min-h-screen">
     <!-- Page Transition Overlay -->
     <div id="page-transition-overlay" class="fixed inset-0 bg-surface flex flex-col items-center justify-center transition-opacity duration-500 pointer-events-auto opacity-100" style="z-index: 9999;">
-        <div class="text-primary font-display-lg text-headline-lg tracking-[0.2em] transition-all duration-500 transform scale-95 opacity-0" id="transition-logo">
-            VNB VOGUE
+        <div class="flex flex-col items-center gap-4 transition-all duration-500 transform scale-95 opacity-0" id="transition-logo">
+            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/WhatsApp_Image_2025-09-09_at_5.03.36_PM-removebg-preview.png" alt="R&A Unisex Salon Logo" class="h-20 w-auto object-contain"/>
+            <div class="text-primary font-display-lg text-headline-md tracking-[0.2em] uppercase">R&A UNISEX SALON</div>
         </div>
     </div>
 
     <!-- TopNavBar -->
     <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-surface-variant transition-all duration-300 ease-in-out">
         <div class="flex justify-between items-center h-20 px-4 md:px-8 max-w-7xl mx-auto transition-all duration-300 ease-in-out">
-            <a class="font-display-lg text-headline-md tracking-tighter text-on-surface" href="index.html">VNB VOGUE</a>
+            <a class="flex items-center gap-3 font-display-lg text-headline-md tracking-tighter text-on-surface" href="index.html">
+                <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/WhatsApp_Image_2025-09-09_at_5.03.36_PM-removebg-preview.png" alt="R&A Unisex Salon Logo" class="h-10 w-auto object-contain"/>
+                <span>R&A UNISEX SALON</span>
+            </a>
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center space-x-8 font-label-md text-label-md uppercase tracking-widest">
                 <a class="nav-link-custom text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
@@ -197,7 +201,10 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 w-80 max-w-full bg-surface-container-lowest shadow-ambient transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6 border-l border-outline-variant/30">
         <div class="flex justify-between items-center mb-8">
-            <span class="font-display-lg text-headline-md tracking-tighter text-primary">VNB VOGUE</span>
+            <span class="flex items-center gap-2 font-display-lg text-headline-md tracking-tighter text-primary">
+            <img src="https://raunisexsalon.in/wp-content/uploads/2025/09/WhatsApp_Image_2025-09-09_at_5.03.36_PM-removebg-preview.png" alt="R&A Unisex Salon Logo" class="h-8 w-auto object-contain"/>
+            <span>R&A UNISEX SALON</span>
+        </span>
             <button id="close-drawer" class="text-primary p-2 hover:bg-surface-container transition-colors rounded-full">
                 <span class="material-symbols-outlined">close</span>
             </button>
@@ -239,7 +246,7 @@
                             1. Select Location
                         </h2>
                         <select id="booking-branch" class="luxury-input font-body-md text-body-md py-3 cursor-pointer" required>
-                            <option value="VNB Vogue: New Delhi" selected>VNB Vogue: Mahavir Enclave (New Delhi)</option>
+                            <option value="R&A Unisex Salon: New Delhi" selected>R&A Unisex Salon: Mahavir Enclave (New Delhi)</option>
                         </select>
                         <span id="branch-error" class="hidden text-error font-body-md text-sm mt-2 block">Please select a location.</span>
                     </section>
@@ -386,7 +393,7 @@
             <div class="w-full text-left bg-surface-container p-6 rounded-lg border border-outline-variant/20 space-y-3 font-body-md text-body-md">
                 <div class="flex justify-between border-b border-outline-variant/20 pb-2">
                     <span class="text-on-surface-variant font-medium">Booking Reference</span>
-                    <span id="modal-ref" class="font-semibold text-primary">VNB-5291</span>
+                    <span id="modal-ref" class="font-semibold text-primary">RA-5291</span>
                 </div>
                 <div class="flex justify-between border-b border-outline-variant/20 pb-2">
                     <span class="text-on-surface-variant font-medium">Location</span>
@@ -406,7 +413,7 @@
                 </div>
             </div>
             <p class="font-body-md text-body-md text-on-surface-variant">
-                Your reservation details are ready. Click below to instantly send your appointment request to VNB Vogue via WhatsApp.
+                Your reservation details are ready. Click below to instantly send your appointment request to R&A Unisex Salon via WhatsApp.
             </p>
             <button id="modal-close" class="px-8 py-3 bg-primary-container text-white font-label-md text-label-md uppercase tracking-widest rounded-full hover:bg-primary transition-all duration-300 w-full mt-4 flex items-center justify-center gap-2">
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.335 4.97L2 22l5.233-1.371a9.94 9.94 0 004.773 1.21h.005c5.502 0 9.987-4.478 9.989-9.985A9.984 9.984 0 0012.012 2zm4.721 13.916c-.26.732-1.503 1.34-2.072 1.425-.561.084-1.127.147-3.664-.853-3.243-1.282-5.32-4.57-5.48-4.786-.16-.215-1.29-1.713-1.29-3.268 0-1.555.801-2.32 1.082-2.603.28-.282.61-.353.812-.353h.581c.183 0 .428-.07.671.517.26.623.882 2.146.958 2.302.076.155.127.338.026.541-.102.203-.153.328-.305.508-.152.18-.32.401-.457.538-.153.153-.312.32-.135.624.177.303.785 1.293 1.684 2.091.139.124.263.23.376.32 1.157 1.026 2.023 1.31 2.307 1.45.283.14.45.119.619-.071.17-.19.728-.846.922-1.136.195-.29.39-.241.656-.142.266.099 1.689.794 1.979.939.29.145.483.218.553.339.07.12.07.7-.19 1.433z"/></svg>
@@ -420,7 +427,7 @@
         <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <div class="col-span-1 md:col-span-2 space-y-4">
-                    <div class="font-headline-md text-headline-md text-primary uppercase">VNB VOGUE</div>
+                    <div class="font-headline-md text-headline-md text-primary uppercase">R&A Unisex Salon</div>
                     <p class="font-body-md text-body-md text-on-surface-variant">Your Crown Deserves World-Class Care.</p>
                     <div class="space-y-2 pt-2">
                         <p class="font-body-md text-body-md text-on-surface-variant flex items-start gap-2"><span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">location_on</span>R.Z.G-27 Mandir Marg, Mahavir Enclave, Opp. Pandey Book Depot, New Delhi - 110045</p>
@@ -450,7 +457,7 @@
                 </div>
             </div>
             <div class="border-t border-outline-variant/30 pt-8 text-center">
-                <p class="font-body-md text-body-md text-on-surface-variant">© 2025 VNB VOGUE UNISEX SALON. ALL RIGHTS RESERVED.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2025 R&A Unisex Salon. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
@@ -759,7 +766,7 @@
 
                 // Location Summary
                 if (selectedBranch) {
-                    branchEl.textContent = selectedBranch.replace('VNB Vogue: ', '');
+                    branchEl.textContent = selectedBranch.replace('R&A Unisex Salon: ', '');
                     branchEl.classList.remove('text-on-surface-variant');
                 } else {
                     branchEl.textContent = "Please Select Location";
@@ -895,11 +902,11 @@
                 const modalStylist = document.getElementById('modal-stylist');
 
                 // Generate booking code
-                const randomRef = 'VNB-' + Math.floor(1000 + Math.random() * 9000);
+                const randomRef = 'RA-' + Math.floor(1000 + Math.random() * 9000);
                 const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
 
                 modalRef.textContent = randomRef;
-                modalBranch.textContent = selectedBranch.replace('VNB Vogue: ', '');
+                modalBranch.textContent = selectedBranch.replace('R&A Unisex Salon: ', '');
                 modalService.textContent = selectedServices.map(s => s.name).join(', ');
                 modalDatetime.textContent = `${formattedDate} @ ${selectedTime}`;
                 modalStylist.textContent = selectedStylist;
@@ -914,7 +921,7 @@
 
                 // Success Modal Close / Redirect with WhatsApp Web link
                 document.getElementById('modal-close').addEventListener('click', () => {
-                    const branchName = selectedBranch.replace('VNB Vogue: ', '');
+                    const branchName = selectedBranch.replace('R&A Unisex Salon: ', '');
                     const servicesText = selectedServices.map(s => s.name).join(', ');
                     const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
                     const totalPrice = selectedServices.reduce((sum, s) => sum + s.price, 0);
@@ -922,8 +929,8 @@
                     const clientPhone = phoneInput.value.trim();
                     const clientRequests = document.getElementById('requests').value.trim() || 'None';
 
-                    const waMessage = `🌸 *VNB VOGUE APPOINTMENT RESERVATION* 🌸\n\n` +
-                                      `Hello, I would like to book a luxury session with VNB Vogue. Here are my reservation details:\n\n` +
+                    const waMessage = `🌸 *R&A Unisex Salon APPOINTMENT RESERVATION* 🌸\n\n` +
+                                      `Hello, I would like to book a luxury session with R&A Unisex Salon. Here are my reservation details:\n\n` +
                                       `📍 *Branch:* ${branchName}\n` +
                                       `💆‍♀️ *Treatment(s):* ${servicesText}\n` +
                                       `📅 *Date & Time:* ${formattedDate} @ ${selectedTime}\n` +
